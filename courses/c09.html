@@ -1,0 +1,505 @@
+<!doctype html>
+<html lang="zh-Hant">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>C09 第九堂課 | AI 入門應用班成果展</title>
+    <meta
+      name="description"
+      content="第九堂課實際內容：現場案例問診、OCR 流程、先討論再產出、AI 安全檢查、Codex 本地工具、本地模型與成果發表準備。"
+    >
+    <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="../assets/styles.css">
+  </head>
+  <body class="lesson-page">
+    <svg aria-hidden="true" class="icon-sprite">
+      <symbol id="icon-home" viewBox="0 0 24 24">
+        <path d="M3 10.8 12 3l9 7.8v9.2a1 1 0 0 1-1 1h-5.2v-6.2H9.2V21H4a1 1 0 0 1-1-1z"/>
+      </symbol>
+      <symbol id="icon-course" viewBox="0 0 24 24">
+        <path d="M5 4.8h10.5a3.5 3.5 0 0 1 3.5 3.5V20H8.5A3.5 3.5 0 0 1 5 16.5z"/>
+        <path d="M8.5 4.8A3.5 3.5 0 0 0 5 8.3v8.2A3.5 3.5 0 0 1 8.5 13H19"/>
+      </symbol>
+      <symbol id="icon-gallery" viewBox="0 0 24 24">
+        <rect x="4" y="5" width="16" height="14" rx="1"/>
+        <path d="m7 16 3.2-3.4 2.4 2.3 2.8-3.8L19 16"/>
+        <circle cx="9" cy="9" r="1.2"/>
+      </symbol>
+      <symbol id="icon-message" viewBox="0 0 24 24">
+        <path d="M5 5h14v10H9l-4 4z"/>
+        <path d="M8 9h8M8 12h5"/>
+      </symbol>
+      <symbol id="icon-info" viewBox="0 0 24 24">
+        <circle cx="12" cy="12" r="8"/>
+        <path d="M12 10v6M12 7.5h.01"/>
+      </symbol>
+      <symbol id="icon-arrow" viewBox="0 0 24 24">
+        <path d="M19 12H5M11 6l-6 6 6 6"/>
+      </symbol>
+    </svg>
+
+    <header class="site-header">
+      <a class="brand" href="../index.html" aria-label="回到成果展首頁">
+        <span class="brand-mark">AI</span>
+        <span>
+          <strong>婦女學苑 AI 成果展</strong>
+          <small>C09 第九堂課</small>
+        </span>
+      </a>
+      <nav class="desktop-nav" aria-label="主要導覽">
+        <a href="../index.html#journey">十堂課</a>
+        <a href="../index.html#outcomes">成果</a>
+        <a href="../index.html#map">學習地圖</a>
+        <a href="../index.html#message-wall">留言</a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="lesson-hero c09-hero">
+        <div class="lesson-hero-copy reveal">
+          <a class="back-link" href="../index.html#journey">
+            <svg><use href="#icon-arrow"></use></svg>
+            回到十堂課旅程
+          </a>
+          <p class="eyebrow">C09 | 2026.06.30</p>
+          <h1>AI 急診與安全控制中心：把卡關整理成下一步</h1>
+          <p>
+            第九堂從學員真實問題出發：80 多堂課排程漏排、掃描 PDF 難辨識、QR Code 免費工具風險、Codex 資料夾權限、本地模型和成果發表。重點不是追新工具，而是判斷流程、節省流量、保護資料，最後把半成品收斂到可以展示。
+          </p>
+        </div>
+        <figure class="c09-control-room reveal" aria-label="第九堂 AI 急診與安全控制中心動畫">
+          <svg viewBox="0 0 780 500" role="img" aria-labelledby="c09-hero-title c09-hero-desc">
+            <title id="c09-hero-title">AI 急診與安全控制中心</title>
+            <desc id="c09-hero-desc">工作問題進入分診台，經過流程討論、工具分工、安全檢查，最後變成可發表成果。</desc>
+            <rect class="c09-room-bg" x="30" y="32" width="720" height="430" rx="24"></rect>
+            <g class="c09-screen main-screen">
+              <rect x="260" y="82" width="260" height="176" rx="18"></rect>
+              <text x="390" y="136">先討論</text>
+              <text x="390" y="176">再產出</text>
+              <path d="M314 212h152"></path>
+            </g>
+            <g class="c09-case case-a">
+              <rect x="78" y="118" width="142" height="74" rx="14"></rect>
+              <text x="149" y="163">排程漏排</text>
+            </g>
+            <g class="c09-case case-b">
+              <rect x="560" y="118" width="142" height="74" rx="14"></rect>
+              <text x="631" y="163">掃描 PDF</text>
+            </g>
+            <g class="c09-case case-c">
+              <rect x="86" y="300" width="142" height="74" rx="14"></rect>
+              <text x="157" y="345">QR 工具</text>
+            </g>
+            <g class="c09-case case-d">
+              <rect x="552" y="300" width="142" height="74" rx="14"></rect>
+              <text x="623" y="345">本地模型</text>
+            </g>
+            <path class="c09-wire wire-a" d="M220 154 C250 154 232 150 260 150"></path>
+            <path class="c09-wire wire-b" d="M560 154 C532 154 548 150 520 150"></path>
+            <path class="c09-wire wire-c" d="M228 336 C280 324 280 246 330 240"></path>
+            <path class="c09-wire wire-d" d="M552 336 C500 324 500 246 450 240"></path>
+            <g class="c09-human">
+              <circle cx="390" cy="330" r="54"></circle>
+              <text x="390" y="324">人是</text>
+              <text x="390" y="356">最後一關</text>
+            </g>
+            <path class="c09-check" d="M360 412l24 24 54-72"></path>
+          </svg>
+        </figure>
+      </section>
+
+      <section class="content-section lesson-content">
+        <div class="lesson-takeaway reveal">
+          <span class="lesson-number">帶走一句話</span>
+          <h2>第九堂把 AI 從「幫我做」改成「先幫我看流程、問問題、控風險，再決定哪一步交給 AI」。</h2>
+        </div>
+
+        <div class="c09-principles reveal">
+          <article>
+            <span>先拆流程</span>
+            <h2>不要一開始就做成品</h2>
+            <p>需求不清楚時，先請 AI 問問題、找限制、畫出步驟，再決定要做報告、表格、程式或影片。</p>
+          </article>
+          <article>
+            <span>先小量測試</span>
+            <h2>大量資料會吃掉流量</h2>
+            <p>掃描 PDF、圖片和手寫資料要先拿 3 到 5 頁測 OCR 辨識率，不要一次丟 100 頁。</p>
+          </article>
+          <article>
+            <span>先設界線</span>
+            <h2>AI 代理要限制資料夾</h2>
+            <p>Codex 或會改檔案的 AI，只給本次專案資料夾，並要求它先列出要新增、修改、刪除什麼。</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="content-section surface">
+        <div class="section-heading reveal">
+          <p class="eyebrow">Case Triage</p>
+          <h2>現場案例分診台：問題、踩坑、修正、結果</h2>
+          <p>第九堂最有價值的是學員把真實工作問題帶進教室。點不同案例，畫面會模擬當時怎麼判斷：先看問題，再看 AI 可能出錯在哪裡，最後收斂成可檢查的下一步。</p>
+        </div>
+
+        <div class="c09-triage-lab reveal" data-c09-triage>
+          <div class="triage-buttons" aria-label="選擇第九堂現場案例">
+            <button type="button" class="is-selected" data-triage-case="schedule">80 堂課排程漏排</button>
+            <button type="button" data-triage-case="ocr">掃描 PDF 無法辨識</button>
+            <button type="button" data-triage-case="qrcode">免費 QR Code 風險</button>
+            <button type="button" data-triage-case="local">本地模型怎麼選</button>
+          </div>
+          <article class="triage-board" aria-live="polite">
+            <div class="triage-monitor" data-triage-visual data-case="schedule">
+              <div class="triage-scene triage-scene-schedule">
+                <div class="mini-sheet">
+                  <b>原始課表</b>
+                  <span>83 堂</span>
+                  <span>10 間教室</span>
+                  <span>日期 / 時段 / 講師</span>
+                </div>
+                <div class="triage-machine">
+                  <i></i>
+                  <strong>AI 初排</strong>
+                  <em>只找到 30 堂</em>
+                </div>
+                <div class="triage-result-list">
+                  <b>人工核對</b>
+                  <span class="bad">漏排 53 堂</span>
+                  <span class="bad">冒出測試課</span>
+                  <span class="good">改用固定表格</span>
+                </div>
+              </div>
+            </div>
+            <div class="triage-copy">
+              <span data-triage-tag>排程案例</span>
+              <h3 data-triage-title>AI 排 80 多堂課，結果只抓到約 30 堂</h3>
+              <p data-triage-problem>問題不是表格看起來漂不漂亮，而是原始課程有沒有全部出現、有沒有冒出不存在的測試課。</p>
+              <div class="triage-checks">
+                <div><strong>先試</strong><p data-triage-first>直接請 AI 幫忙排課，結果看似有表格，但課程數量不對。</p></div>
+                <div><strong>修正</strong><p data-triage-tool>先固定欄位：課名、教室、日期、時段，再要求 AI 列出缺漏與衝突。</p></div>
+                <div><strong>結果</strong><p data-triage-check>AI 可以輔助排程，但最後要用 Excel 或人工名單核對總數、重複與不存在項目。</p></div>
+              </div>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section class="content-section">
+        <div class="section-heading reveal">
+          <p class="eyebrow">OCR Flow Game</p>
+          <h2>掃描 PDF，不要一口氣丟進 AI</h2>
+          <p>這堂課提醒：圖片 PDF、手寫資料和大量頁面會快速消耗 Token。這個小遊戲模擬把大量資料拆成可控流程。</p>
+        </div>
+
+        <div class="ocr-lab reveal" data-c09-ocr>
+          <div class="ocr-controls" aria-label="選擇 OCR 流程步驟">
+            <button type="button" class="is-selected" data-ocr-step="sample">先測 3 頁</button>
+            <button type="button" data-ocr-step="drive">Google Drive OCR</button>
+            <button type="button" data-ocr-step="notebook">NotebookLM 整理</button>
+            <button type="button" data-ocr-step="excel">Excel 人工校正</button>
+          </div>
+          <article class="ocr-machine" aria-live="polite">
+            <div class="ocr-visual" data-ocr-visual data-step="sample">
+              <div class="ocr-pipeline-stage" data-ocr-stage>
+                <div class="paper-stack">
+                  <span>PDF</span>
+                  <span>IMG</span>
+                  <span>手寫</span>
+                </div>
+                <div class="ocr-output-table">
+                  <b>測試結果</b>
+                  <span>姓名：可辨識</span>
+                  <span>電話：需校正</span>
+                  <span>備註：手寫易錯</span>
+                </div>
+              </div>
+              <div class="ocr-arrow">→</div>
+              <div class="token-meter">
+                <strong data-ocr-meter-label>Token 壓力：低</strong>
+                <i data-ocr-meter style="--level: 28%"></i>
+                <small data-ocr-warning>先測 3 頁，確認欄位和辨識率。</small>
+              </div>
+            </div>
+            <div class="ocr-copy">
+              <span data-ocr-tag>小量測試</span>
+              <h3 data-ocr-title>先拿 3 到 5 頁測辨識率</h3>
+              <p data-ocr-desc>不要一開始就丟 100 頁掃描 PDF。先看 AI 是否能讀出欄位、姓名、數字，再決定後續流程。</p>
+              <strong data-ocr-result>結論：先知道可不可行，才不會把免費或付費流量一次燒完。</strong>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section class="content-section surface">
+        <div class="section-heading reveal">
+          <p class="eyebrow">Prompt Clinic</p>
+          <h2>把「幫我做」改成「先跟我討論」</h2>
+          <p>第九堂反覆提醒：需求還沒釐清前，不要急著叫 AI 生成檔案。下面可以組出一段適合工作問診的提示詞。</p>
+        </div>
+
+        <div class="c09-prompt-clinic reveal" data-c09-prompt>
+          <div class="prompt-clinic-controls" aria-label="選擇提示詞組件">
+            <button type="button" class="is-selected" data-prompt-part="role">我的角色</button>
+            <button type="button" class="is-selected" data-prompt-part="workflow">目前流程</button>
+            <button type="button" class="is-selected" data-prompt-part="stuck">卡關點</button>
+            <button type="button" class="is-selected" data-prompt-part="guard">先不要生成</button>
+            <button type="button" data-prompt-part="summary">整理成接續文件</button>
+          </div>
+          <article class="prompt-clinic-output">
+            <div class="prompt-doctor">
+              <span>AI 問診句</span>
+              <div class="prompt-bubbles" data-c09-prompt-output></div>
+            </div>
+            <div class="prompt-clinic-note">
+              <h3>這堂課的改法</h3>
+              <p>不是少問 AI，而是先把工作背景講清楚，要求 AI 先問問題、先討論流程，再生成成果。長對話結束前，再請 AI 整理成下次能接續的重點文件。</p>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section class="content-section">
+        <div class="section-heading reveal">
+          <p class="eyebrow">Safety Check</p>
+          <h2>AI 安全闖關：哪一些要遮、要查、要限制？</h2>
+          <p>安全不是另外一張清單，而是每次把資料交給 AI 前都要做的判斷。點不同情境，看看第九堂建議怎麼處理。</p>
+        </div>
+
+        <div class="safety-game reveal" data-c09-safety>
+          <div class="safety-cases" aria-label="選擇安全情境">
+            <button type="button" class="is-selected" data-safety-case="private">客戶完整名冊</button>
+            <button type="button" data-safety-case="official">官方電話與日期</button>
+            <button type="button" data-safety-case="codex">Codex 要改檔案</button>
+            <button type="button" data-safety-case="media">照片影片要發布</button>
+          </div>
+          <article class="safety-board" aria-live="polite">
+            <div class="safety-gate" data-safety-gate data-mode="private">
+              <div class="gate-card">原始資料</div>
+              <div class="gate-lock">!</div>
+              <div class="gate-card safe">可用版本</div>
+            </div>
+            <div class="safety-copy">
+              <span data-safety-tag>先去識別化</span>
+              <h3 data-safety-title>客戶、學生、同事名冊不能直接丟</h3>
+              <p data-safety-desc>姓名、電話、地址、生日和完整名冊都可能辨識個人。若要請 AI 分析，先改成 A、B、C，電話只留末三碼，地址只留城市。</p>
+              <strong data-safety-action>建議問法：請先幫我把以下資料去識別化，再進行整理。</strong>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section class="content-section surface">
+        <div class="section-heading reveal">
+          <p class="eyebrow">Local Tool Workshop</p>
+          <h2>QR Code 工具：從免費網站風險，改成本地小工具</h2>
+          <p>第九堂用 QR Code 當例子：簡單、重複、又可能有條款風險的線上工具，可以請 Codex 做成本地網頁小工具。</p>
+        </div>
+
+        <div class="local-tool-lab reveal" data-c09-tool>
+          <div class="local-tool-buttons" aria-label="選擇本地工具功能">
+            <button type="button" class="is-selected" data-tool-part="risk">線上工具風險</button>
+            <button type="button" data-tool-part="overbuild">需求太滿</button>
+            <button type="button" data-tool-part="fail">第一版卡關</button>
+            <button type="button" data-tool-part="minimal">縮小重做</button>
+            <button type="button" data-tool-part="qrcode">實際 QR 工具</button>
+            <button type="button" data-tool-part="image">圖片工具畫面</button>
+          </div>
+          <article class="local-tool-board" aria-live="polite">
+            <div class="browser-mock" data-tool-visual data-mode="risk">
+              <div class="browser-bar"><span></span><span></span><span></span><strong>local-qrcode.html</strong></div>
+              <div class="browser-body">
+                <div class="tool-storyboard" data-tool-story>
+                  <div class="warning-site">免費 QR 網站<br><small>可能轉付費 / 改跳轉</small></div>
+                  <div class="tool-arrow">→</div>
+                  <div class="local-file">本地 HTML<br><small>瀏覽器直接開</small></div>
+                </div>
+                <iframe class="tool-frame" title="第九堂本地工具預覽" data-tool-frame hidden></iframe>
+              </div>
+            </div>
+            <div class="local-tool-copy">
+              <span data-tool-tag>先看風險</span>
+              <h3 data-tool-title>免費 QR Code 網站不一定適合長期印刷品</h3>
+              <p data-tool-desc>如果海報已經印出來，但 QR 服務未來轉付費、改跳轉或停止服務，就會影響既有成品。</p>
+              <strong data-tool-lesson>課堂結論：不是每個免費網站都能放心放進正式工作流程。</strong>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section class="content-section">
+        <div class="section-heading reveal">
+          <p class="eyebrow">Local Model Dashboard</p>
+          <h2>雲端 AI、本地模型、混合流程怎麼選？</h2>
+          <p>第九堂介紹 Ollama 與本地模型，但也提醒小模型能力有限、吃硬體與電力。這裡用儀表板判斷適合放在哪一段。</p>
+        </div>
+
+        <div class="model-dashboard reveal" data-c09-model>
+          <div class="model-choices" aria-label="選擇模型使用方式">
+            <button type="button" class="is-selected" data-model-choice="cloud">雲端大模型</button>
+            <button type="button" data-model-choice="local">本地模型</button>
+            <button type="button" data-model-choice="hybrid">混合流程</button>
+          </div>
+          <article class="model-board" aria-live="polite">
+            <div class="model-gauges" data-model-visual data-mode="cloud">
+              <div class="model-flow">
+                <span>去識別摘要</span>
+                <b>→</b>
+                <span>雲端 AI 討論流程</span>
+                <b>→</b>
+                <span>人工查證</span>
+              </div>
+              <div><span>隱私</span><i style="--value: 42%"></i></div>
+              <div><span>推理能力</span><i style="--value: 92%"></i></div>
+              <div><span>硬體負擔</span><i style="--value: 18%"></i></div>
+              <div><span>查證需求</span><i style="--value: 72%"></i></div>
+            </div>
+            <div class="model-copy">
+              <span data-model-tag>適合複雜任務</span>
+              <h3 data-model-title>雲端大模型適合推理、規劃與高品質生成</h3>
+              <p data-model-desc>ChatGPT、Gemini、Claude 這類雲端工具通常能力較強，適合複雜流程討論，但不適合直接上傳敏感資料。</p>
+              <strong data-model-tip>建議：可先去識別化，再用雲端 AI 討論流程與檢查清單。</strong>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section class="content-section surface">
+        <div class="section-heading reveal">
+          <p class="eyebrow">C10 Ready</p>
+          <h2>成果發表準備台：三句話就能開始</h2>
+          <p>第九堂最後收斂到 C10：成果可以是半成品，重點是說清楚「我做什麼、怎麼用 AI、學到什麼」。</p>
+        </div>
+
+        <div class="presentation-lab reveal" data-c09-present>
+          <div class="presentation-types" aria-label="選擇成果類型">
+            <button type="button" class="is-selected" data-present-type="doc">文件整理</button>
+            <button type="button" data-present-type="table">表格排程</button>
+            <button type="button" data-present-type="video">影片歌曲</button>
+            <button type="button" data-present-type="tool">網頁小工具</button>
+            <button type="button" data-present-type="process">流程紀錄</button>
+          </div>
+          <article class="presentation-card" aria-live="polite">
+            <div class="presentation-preview">
+              <div class="speech-stage" data-present-visual>
+                <div class="speech-card">
+                  <span>1</span>
+                  <p>我這次做的是：把工作需求整理成 AI 可以接續處理的文件。</p>
+                </div>
+                <div class="speech-card">
+                  <span>2</span>
+                  <p>我使用 AI 的方式是：先請它問問題，再整理重點與下一步。</p>
+                </div>
+                <div class="speech-card">
+                  <span>3</span>
+                  <p>我學到的是：成果不一定完美，但要能檢查。</p>
+                </div>
+              </div>
+            </div>
+            <div class="presentation-copy">
+              <span data-present-tag>可展示成果</span>
+              <h3 data-present-title>文件整理或對話摘要也可以上台分享</h3>
+              <ol data-present-lines>
+                <li>我這次做的是：把一段工作需求整理成 AI 可以接續處理的文件。</li>
+                <li>我使用 AI 的方式是：先請它問問題，再整理重點與下一步。</li>
+                <li>我學到最重要的一件事是：成果不一定要完美，但要能檢查。</li>
+              </ol>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section class="content-section surface">
+        <div class="section-heading reveal">
+          <p class="eyebrow">Quick Check</p>
+          <h2>課後 1 分鐘小檢查</h2>
+          <p>確認第九堂的核心：流程問診、OCR 小量測試、AI 安全、Codex 權限、本地工具與 C10 發表。</p>
+        </div>
+        <div class="quiz-panel reveal" data-quiz data-quiz-name="C09">
+          <article class="quiz-card" data-quiz-question>
+            <span>01</span>
+            <h3>需求還不清楚時，最好的第一步是什麼？</h3>
+            <button type="button" data-correct="true">請 AI 先問問題、討論流程，不要立刻生成</button>
+            <button type="button" data-correct="false">直接叫 AI 做完整報告</button>
+            <button type="button" data-correct="false">把所有檔案一次丟上去</button>
+            <p class="quiz-feedback"></p>
+          </article>
+          <article class="quiz-card" data-quiz-question>
+            <span>02</span>
+            <h3>大量掃描 PDF 要先怎麼做？</h3>
+            <button type="button" data-correct="false">一次丟 100 頁最省時間</button>
+            <button type="button" data-correct="true">先拿 3 到 5 頁測 OCR 辨識率</button>
+            <button type="button" data-correct="false">只要轉成 PDF 就一定好讀</button>
+            <p class="quiz-feedback"></p>
+          </article>
+          <article class="quiz-card" data-quiz-question>
+            <span>03</span>
+            <h3>使用 Codex 或 AI 代理時，哪個做法較安全？</h3>
+            <button type="button" data-correct="true">只開本次專案資料夾，修改前先列出檔案動作</button>
+            <button type="button" data-correct="false">直接給整台電腦完整存取權</button>
+            <button type="button" data-correct="false">不同專案全部放同一個資料夾</button>
+            <p class="quiz-feedback"></p>
+          </article>
+          <article class="quiz-card" data-quiz-question>
+            <span>04</span>
+            <h3>本地模型最適合哪一類任務？</h3>
+            <button type="button" data-correct="false">所有複雜決策都比雲端模型強</button>
+            <button type="button" data-correct="true">隱私資料的初步整理、摘要、翻譯或分類</button>
+            <button type="button" data-correct="false">完全不吃硬體與電力</button>
+            <p class="quiz-feedback"></p>
+          </article>
+          <article class="quiz-card" data-quiz-question>
+            <span>05</span>
+            <h3>C10 發表不完美時，仍可以展示什麼？</h3>
+            <button type="button" data-correct="false">只能展示完成度 100% 的作品</button>
+            <button type="button" data-correct="true">半成品、流程整理、AI 對話摘要或失敗修正紀錄</button>
+            <button type="button" data-correct="false">完全不要說遇到的困難</button>
+            <p class="quiz-feedback"></p>
+          </article>
+          <div class="quiz-result" aria-live="polite">
+            <strong>完成 0 / 5 題</strong>
+            <small>答完五題後，這裡會顯示你的 C09 小檢查結果。</small>
+          </div>
+        </div>
+      </section>
+
+      <section class="content-section split next-lesson">
+        <div class="section-heading reveal">
+          <p class="eyebrow">Next</p>
+          <h2>與第十堂的銜接</h2>
+          <p>
+            第九堂把工作卡關、資料安全和成果發表收斂成可行下一步；第十堂就能回到每位學員的成果分享與課程總結。
+          </p>
+        </div>
+        <a class="next-card reveal" href="c10.html">
+          <span>C10</span>
+          <strong>成果發表與結業</strong>
+          <p>用三分鐘說清楚自己做了什麼、怎麼問 AI、怎麼檢查與下一步想怎麼用。</p>
+        </a>
+      </section>
+    </main>
+
+    <nav class="mobile-bottom-nav" aria-label="手機導覽">
+      <a href="../index.html" aria-label="首頁">
+        <svg><use href="#icon-home"></use></svg>
+        <span>首頁</span>
+      </a>
+      <a href="../index.html#journey" aria-label="課程">
+        <svg><use href="#icon-course"></use></svg>
+        <span>課程</span>
+      </a>
+      <a href="../index.html#outcomes" aria-label="成果">
+        <svg><use href="#icon-gallery"></use></svg>
+        <span>成果</span>
+      </a>
+      <a href="../index.html#message-wall" aria-label="留言">
+        <svg><use href="#icon-message"></use></svg>
+        <span>留言</span>
+      </a>
+      <a href="../index.html#about" aria-label="關於">
+        <svg><use href="#icon-info"></use></svg>
+        <span>關於</span>
+      </a>
+    </nav>
+
+    <script src="../assets/app.js"></script>
+  </body>
+</html>

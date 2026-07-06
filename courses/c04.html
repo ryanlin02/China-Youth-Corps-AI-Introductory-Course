@@ -1,0 +1,576 @@
+<!doctype html>
+<html lang="zh-Hant">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>C04 第四堂課 | AI 入門應用班成果展</title>
+    <meta
+      name="description"
+      content="第四堂課實際內容：以學員真實排班問題為核心，練習用口述規則、AI 缺漏偵測、Gemini 排班、Gem 小助手與人工檢查完成可用成果。"
+    >
+    <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="../assets/styles.css">
+  </head>
+  <body class="lesson-page">
+    <svg aria-hidden="true" class="icon-sprite">
+      <symbol id="icon-home" viewBox="0 0 24 24">
+        <path d="M3 10.8 12 3l9 7.8v9.2a1 1 0 0 1-1 1h-5.2v-6.2H9.2V21H4a1 1 0 0 1-1-1z"/>
+      </symbol>
+      <symbol id="icon-course" viewBox="0 0 24 24">
+        <path d="M5 4.8h10.5a3.5 3.5 0 0 1 3.5 3.5V20H8.5A3.5 3.5 0 0 1 5 16.5z"/>
+        <path d="M8.5 4.8A3.5 3.5 0 0 0 5 8.3v8.2A3.5 3.5 0 0 1 8.5 13H19"/>
+      </symbol>
+      <symbol id="icon-gallery" viewBox="0 0 24 24">
+        <rect x="4" y="5" width="16" height="14" rx="1"/>
+        <path d="m7 16 3.2-3.4 2.4 2.3 2.8-3.8L19 16"/>
+        <circle cx="9" cy="9" r="1.2"/>
+      </symbol>
+      <symbol id="icon-message" viewBox="0 0 24 24">
+        <path d="M5 5h14v10H9l-4 4z"/>
+        <path d="M8 9h8M8 12h5"/>
+      </symbol>
+      <symbol id="icon-info" viewBox="0 0 24 24">
+        <circle cx="12" cy="12" r="8"/>
+        <path d="M12 10v6M12 7.5h.01"/>
+      </symbol>
+      <symbol id="icon-arrow" viewBox="0 0 24 24">
+        <path d="M19 12H5M11 6l-6 6 6 6"/>
+      </symbol>
+    </svg>
+
+    <header class="site-header">
+      <a class="brand" href="../index.html" aria-label="回到成果展首頁">
+        <span class="brand-mark">AI</span>
+        <span>
+          <strong>婦女學苑 AI 成果展</strong>
+          <small>C04 第四堂課</small>
+        </span>
+      </a>
+      <nav class="desktop-nav" aria-label="主要導覽">
+        <a href="../index.html#journey">十堂課</a>
+        <a href="../index.html#outcomes">成果</a>
+        <a href="../index.html#map">學習地圖</a>
+        <a href="../index.html#message-wall">留言</a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="lesson-hero c04-hero">
+        <div class="lesson-hero-copy reveal">
+          <a class="back-link" href="../index.html#journey">
+            <svg><use href="#icon-arrow"></use></svg>
+            回到十堂課旅程
+          </a>
+          <p class="eyebrow">C04 | 2026.05.26</p>
+          <h1>AI 排班解題室：從口述規則到可檢查班表</h1>
+          <p>
+            第四堂原本安排資料整理練習，實際上課時因為學員帶來真實排班難題，課程轉成現場專案：把複雜規則口述給 AI，先請 AI 找缺漏與邏輯衝突，再補充規則、產出班表，最後做成可重複使用的 Gem 小助手。
+          </p>
+        </div>
+        <div class="lesson-facts reveal" aria-label="第四堂課資訊">
+          <div>
+            <span>時間</span>
+            <strong>週二 18:30-20:30</strong>
+          </div>
+          <div>
+            <span>實際主軸</span>
+            <strong>真實排班、語音整理、Gemini Gem</strong>
+          </div>
+          <div>
+            <span>課堂加碼</span>
+            <strong>個人化設定、AI 修圖、Suno 音樂</strong>
+          </div>
+        </div>
+      </section>
+
+      <section class="content-section lesson-content">
+        <div class="lesson-takeaway reveal">
+          <span class="lesson-number">帶走一句話</span>
+          <h2>越複雜的工作，越不能直接叫 AI 做。先讓 AI 問你缺什麼，結果才可靠。</h2>
+        </div>
+
+        <div class="lesson-grid">
+          <article class="lesson-card reveal">
+            <h2>實際練習了什麼</h2>
+            <ul class="check-list">
+              <li>把學員真實的六、七月份排班需求，用手機語音先講成一段完整需求。</li>
+              <li>請 AI 將口述內容整理成可執行提示詞，而不是馬上輸出班表。</li>
+              <li>在排班前先問 AI：「規則有沒有缺漏？可不可以直接排班？有沒有邏輯衝突？」</li>
+              <li>根據 AI 提醒，補充休假、班別時間、兼職時數、六休一、班距 11 小時等隱藏規則。</li>
+              <li>產出六、七月班表 Word 檔，並建立「排班小助手」Gem，之後可用同一套規則追問。</li>
+              <li>課末延伸到 ChatGPT 個人化設定、AI 修圖、Canva/Photoshop 整合與 Suno 歌曲示範。</li>
+            </ul>
+          </article>
+
+          <article class="lesson-card reveal">
+            <h2>這堂課和原教案的差異</h2>
+            <p>
+              原教案偏向 LINE 訊息整理、會議錄音與亂筆記整理；實際課程最有價值的部分，是學員帶來真實工作問題後，老師帶著大家現場把問題變成 AI 可處理的流程。這堂課因此變成「AI 如何協助真實工作」的關鍵示範。
+            </p>
+          </article>
+        </div>
+      </section>
+
+      <section class="content-section surface">
+        <div class="section-heading reveal">
+          <p class="eyebrow">Live Case Flow</p>
+          <h2>一個真實排班案，被拆成六個可操作步驟</h2>
+          <p>上課時最重要的不是班表本身，而是學員看見：自己的工作規則其實有很多「沒說出口的潛規則」，AI 會逼我們把它講清楚。</p>
+        </div>
+
+        <div class="c04-case-flow reveal">
+          <figure class="c04-flow-visual" aria-label="從口述排班規則到 Gem 小助手的流程動畫">
+            <svg viewBox="0 0 920 520" role="img" aria-labelledby="c04-flow-title c04-flow-desc">
+              <title id="c04-flow-title">第四堂排班流程示意</title>
+              <desc id="c04-flow-desc">語音口述、AI 整理提示詞、AI 找缺漏、補充規則、產出班表、建立 Gem 小助手。</desc>
+              <rect class="shift-canvas" x="24" y="24" width="872" height="472" rx="20"></rect>
+              <path class="shift-path" d="M142 168 C258 88 314 242 426 164 S598 90 706 172 772 310 690 366 496 368 440 284 282 250 198 342"></path>
+              <g class="flow-step step-one">
+                <circle cx="142" cy="168" r="54"></circle>
+                <text x="142" y="158">口述</text>
+                <text x="142" y="184">規則</text>
+              </g>
+              <g class="flow-step step-two">
+                <circle cx="426" cy="164" r="54"></circle>
+                <text x="426" y="158">整理</text>
+                <text x="426" y="184">提示詞</text>
+              </g>
+              <g class="flow-step step-three">
+                <circle cx="706" cy="172" r="54"></circle>
+                <text x="706" y="158">找出</text>
+                <text x="706" y="184">缺漏</text>
+              </g>
+              <g class="flow-step step-four">
+                <circle cx="690" cy="366" r="54"></circle>
+                <text x="690" y="356">補充</text>
+                <text x="690" y="382">規則</text>
+              </g>
+              <g class="flow-step step-five">
+                <circle cx="440" cy="284" r="54"></circle>
+                <text x="440" y="274">產出</text>
+                <text x="440" y="300">班表</text>
+              </g>
+              <g class="flow-step step-six">
+                <circle cx="198" cy="342" r="54"></circle>
+                <text x="198" y="332">建立</text>
+                <text x="198" y="358">Gem</text>
+              </g>
+              <g class="voice-card">
+                <rect x="76" y="50" width="238" height="68" rx="12"></rect>
+                <text x="96" y="82">「6/18 到 6/20 休，</text>
+                <text x="96" y="106">6/21 要上班...」</text>
+              </g>
+              <g class="warning-card">
+                <rect x="562" y="242" width="270" height="86" rx="12"></rect>
+                <text x="586" y="276">AI 先問：</text>
+                <text x="586" y="304">這些規則足夠排班嗎？</text>
+              </g>
+            </svg>
+          </figure>
+
+          <div class="c04-flow-notes">
+            <article>
+              <span>課堂關鍵</span>
+              <h3>AI 像很聰明的工讀生，但它不知道你的公司潛規則</h3>
+              <p>所以不要只說「幫我排班」，要先把人員、班別、休假、時數、例外狀況與優先順序說清楚。</p>
+            </article>
+            <article>
+              <span>安全做法</span>
+              <h3>先檢查缺漏，再要求輸出</h3>
+              <p>這堂課示範的好習慣是：請 AI 先指出不明確處與邏輯衝突，再由人補資料，最後才產出表格或 Word 文件。</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="content-section">
+        <div class="section-heading reveal">
+          <p class="eyebrow">Diagnostic Lab</p>
+          <h2>AI 缺漏偵測器：不要急著得到答案，先看規則夠不夠</h2>
+          <p>點選左側情境，右側會模擬課堂中 AI 如何從一段排班需求裡抓出缺漏。這不是要替代勞動法或主管判斷，而是協助承辦人更快發現「還沒講清楚的地方」。</p>
+        </div>
+
+        <div class="diagnostic-lab reveal" data-c04-diagnostic-lab>
+          <div class="diagnostic-buttons" aria-label="選擇排班缺漏情境">
+            <button type="button" class="is-selected" data-diagnostic-choice="start">原始口述規則</button>
+            <button type="button" data-diagnostic-choice="rest">6/21 強制上班</button>
+            <button type="button" data-diagnostic-choice="parttime">兼職時數與人力</button>
+            <button type="button" data-diagnostic-choice="shift">班別時間與班距</button>
+          </div>
+
+          <article class="diagnostic-board" aria-live="polite">
+            <span data-diagnostic-tag>Step 1</span>
+            <h3 data-diagnostic-title>先不要急著排班</h3>
+            <div class="diagnostic-columns">
+              <div>
+                <strong>學員提供</strong>
+                <p data-diagnostic-user>我負責六、七月排班，有五位同仁、端午休假、幾天一定要上班，正職與兼職時數不同。</p>
+              </div>
+              <div>
+                <strong>AI 觀察</strong>
+                <p data-diagnostic-ai>可以先整理成提示詞，但目前還不適合直接排班，因為班別時間、休息規則與例外狀況仍不完整。</p>
+              </div>
+              <div>
+                <strong>課堂結論</strong>
+                <p data-diagnostic-conclusion>第一輪最好的問題不是「請幫我排」，而是「請問還缺什麼資訊？規則有沒有衝突？」</p>
+              </div>
+            </div>
+            <div class="diagnostic-chips" data-diagnostic-chips>
+              <span>語音口述</span>
+              <span>規則整理</span>
+              <span>先問缺漏</span>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section class="content-section surface">
+        <div class="section-heading reveal">
+          <p class="eyebrow">Shift System Simulator</p>
+          <h2>互動排班系統模擬器：AI 不是直接重排，而是先跑檢查</h2>
+          <p>這裡把課堂中產出的排班系統概念做成小型互動模擬。點選不同請假情境，右側會像系統一樣查原班表、檢查規則、標出風險，最後才給出是否需要重排的結論。</p>
+        </div>
+
+        <div class="shift-lab reveal" data-shift-lab>
+          <div class="shift-scenarios" aria-label="選擇請假情境">
+            <button type="button" class="is-selected" data-shift-choice="june23">
+              <span>情境 1</span>
+              B 6/23 請假
+            </button>
+            <button type="button" data-shift-choice="june20">
+              <span>情境 2</span>
+              B 6/20 請假
+            </button>
+            <button type="button" data-shift-choice="june26">
+              <span>情境 3</span>
+              B 6/26-27 請假
+            </button>
+          </div>
+
+          <article class="shift-system" aria-live="polite">
+            <div class="system-topbar">
+              <div>
+                <span data-shift-tag>情境 1</span>
+                <h3 data-shift-title>B 同仁 6/23（週二）請假</h3>
+              </div>
+              <strong data-shift-status>不用重排</strong>
+            </div>
+
+            <div class="system-console">
+              <div class="system-screen">
+                <div class="system-toolbar">
+                  <span>2026 Jun-Jul Shift System</span>
+                  <small data-shift-mode>查表完成</small>
+                </div>
+
+                <div class="schedule-window" data-shift-calendar>
+                  <div class="calendar-cell">
+                    <span>6/20 Sat</span>
+                    <strong>B</strong>
+                    <small>週末服務班</small>
+                  </div>
+                  <div class="calendar-cell">
+                    <span>6/21 Sun</span>
+                    <strong>A / C</strong>
+                    <small>指定服務日</small>
+                  </div>
+                  <div class="calendar-cell is-active">
+                    <span>6/23 Tue</span>
+                    <strong>A / C</strong>
+                    <small>B 固定排休</small>
+                  </div>
+                  <div class="calendar-cell">
+                    <span>6/26 Fri</span>
+                    <strong>B / D</strong>
+                    <small>夜間服務</small>
+                  </div>
+                  <div class="calendar-cell">
+                    <span>6/27 Sat</span>
+                    <strong>B / A</strong>
+                    <small>長時段服務</small>
+                  </div>
+                  <div class="calendar-cell">
+                    <span>7/01 Wed</span>
+                    <strong>A / C</strong>
+                    <small>平日正職</small>
+                  </div>
+                </div>
+              </div>
+
+              <div class="system-side">
+                <div class="system-verdict">
+                  <span>系統判斷</span>
+                  <strong data-shift-verdict>不用重排，只需註記請假</strong>
+                  <p data-shift-desc>B 同仁在 6/23 原本就沒有被安排班別，因此不需要重排。這是一個很好的提醒：AI 應該先查表，再決定要不要動表。</p>
+                </div>
+
+                <div class="system-logs" data-shift-logs>
+                  <div><span>01</span><p>查 6/23 原班表</p></div>
+                  <div><span>02</span><p>確認 B 當天沒有班</p></div>
+                  <div><span>03</span><p>不啟動重排，只保留請假紀錄</p></div>
+                </div>
+              </div>
+            </div>
+
+            <div class="mini-schedule" data-shift-table>
+              <div><strong>日期</strong><span>6/23 週二</span></div>
+              <div><strong>原班表</strong><span>正職 A / C</span></div>
+              <div><strong>B 狀態</strong><span>固定排休</span></div>
+            </div>
+
+            <div class="compliance-lights" data-shift-checks>
+              <article><span></span><strong>原班表衝突</strong><small>無</small></article>
+              <article><span></span><strong>合規風險</strong><small>低</small></article>
+              <article><span></span><strong>下一步</strong><small>註記請假即可</small></article>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section class="content-section">
+        <div class="section-heading reveal">
+          <p class="eyebrow">Reusable Assistant</p>
+          <h2>從一次排班，升級成「排班小助手」</h2>
+          <p>這堂課後半段示範 Gemini Gem：把公司排班規則寫進固定助理，下次不用重打所有背景，只要說新的請假或異動情境。</p>
+        </div>
+
+        <div class="gem-studio reveal" data-gem-studio>
+          <div class="gem-control-panel" aria-label="選擇排班小助手設定">
+            <button type="button" class="is-selected" data-gem-choice="rules">
+              <span>01</span>
+              固定公司規則
+            </button>
+            <button type="button" data-gem-choice="check">
+              <span>02</span>
+              先查表再判斷
+            </button>
+            <button type="button" data-gem-choice="output">
+              <span>03</span>
+              輸出調整理由
+            </button>
+          </div>
+
+          <article class="gem-workbench" aria-live="polite">
+            <div class="gem-window">
+              <div class="gem-window-top">
+                <span>Gemini Gem</span>
+                <strong data-gem-mode>規則記憶中</strong>
+              </div>
+              <div class="gem-avatar" aria-hidden="true">
+                <span></span>
+                <strong>排班小助手</strong>
+              </div>
+              <div class="gem-memory">
+                <span>Gem 會記住</span>
+                <ul data-gem-memory>
+                  <li>正職與兼職時數不同</li>
+                  <li>週五、週六服務班優先安排兼職</li>
+                  <li>班距至少 11 小時，避免連續過長</li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="gem-preview">
+              <span data-gem-tag>設定重點</span>
+              <h3 data-gem-title>把每次都要重講的排班規則存進 Gem</h3>
+              <p data-gem-desc>上課時建立的「排班小助手」不是替人決定班表，而是把公司規則固定下來，讓每次詢問請假或調班時，都能先用同一套邏輯檢查。</p>
+              <div class="gem-example">
+                <strong>示範追問</strong>
+                <p data-gem-example>如果 B 同仁 6/23 請假，請先確認他當天是否有班，再判斷是否需要重排。</p>
+              </div>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section class="content-section surface">
+        <div class="section-heading reveal">
+          <p class="eyebrow">Student Works</p>
+          <h2>第四堂實際產出結果</h2>
+          <p>這堂課最後產出的不是只有一份表格，而是一整套工作方法：Word 班表、互動排班系統概念、Gem 小助手，還有課堂延伸的修圖與音樂作品。</p>
+        </div>
+
+        <div class="outcome-stage reveal" data-outcome-stage>
+          <div class="outcome-switcher" aria-label="選擇第四堂成果">
+            <button type="button" class="is-selected" data-outcome-choice="document">Word 班表</button>
+            <button type="button" data-outcome-choice="system">排班系統</button>
+            <button type="button" data-outcome-choice="gem">Gem 小助手</button>
+            <button type="button" data-outcome-choice="bonus">課堂加碼</button>
+          </div>
+
+          <article class="outcome-display" aria-live="polite">
+            <div class="outcome-visual" data-outcome-visual data-mode="document">
+              <svg viewBox="0 0 720 430" role="img" aria-labelledby="outcome-title outcome-desc">
+                <title id="outcome-title">第四堂課成果展示模擬</title>
+                <desc id="outcome-desc">模擬 Word 班表、排班系統、Gem 小助手與課堂加碼成果。</desc>
+                <rect class="outcome-bg" x="20" y="20" width="680" height="390" rx="18"></rect>
+
+                <g class="outcome-mode outcome-document">
+                  <rect class="doc-page" x="86" y="54" width="548" height="322" rx="10"></rect>
+                  <text class="doc-title" x="134" y="104">2026 六、七月份班表初稿</text>
+                  <g class="doc-table">
+                    <rect x="134" y="132" width="452" height="42" rx="6"></rect>
+                    <rect x="134" y="184" width="452" height="42" rx="6"></rect>
+                    <rect x="134" y="236" width="452" height="42" rx="6"></rect>
+                    <rect x="134" y="288" width="452" height="42" rx="6"></rect>
+                    <text x="154" y="159">日期 / 班別 / 同仁 / 備註</text>
+                    <text x="154" y="211">6/20 週六 / 服務班 / B / 需可替代</text>
+                    <text x="154" y="263">6/23 週二 / 平日班 / A、C / B 未排班</text>
+                    <text x="154" y="315">6/26-27 / 連續服務 / B、D / 需檢查</text>
+                  </g>
+                  <path class="doc-check" d="m548 98 18 18 38-44"></path>
+                </g>
+
+                <g class="outcome-mode outcome-system">
+                  <rect class="sys-panel" x="70" y="62" width="580" height="306" rx="14"></rect>
+                  <rect class="sys-bar" x="70" y="62" width="580" height="48" rx="14"></rect>
+                  <text class="sys-title" x="104" y="94">智慧排班系統</text>
+                  <g class="sys-cards">
+                    <rect x="106" y="142" width="132" height="86" rx="10"></rect>
+                    <rect x="262" y="142" width="132" height="86" rx="10"></rect>
+                    <rect x="418" y="142" width="132" height="86" rx="10"></rect>
+                    <rect x="106" y="252" width="444" height="70" rx="10"></rect>
+                    <text x="128" y="174">查原班表</text>
+                    <text x="284" y="174">跑規則</text>
+                    <text x="440" y="174">給結論</text>
+                    <text x="130" y="294">B 6/23 未排班，不需重排</text>
+                  </g>
+                  <path class="sys-flow" d="M238 185 H262 M394 185 H418"></path>
+                </g>
+
+                <g class="outcome-mode outcome-gem">
+                  <rect class="gem-sim-phone" x="96" y="56" width="252" height="320" rx="26"></rect>
+                  <circle class="gem-sim-dot" cx="222" cy="88" r="7"></circle>
+                  <rect class="gem-chat-a" x="126" y="126" width="172" height="52" rx="12"></rect>
+                  <rect class="gem-chat-b" x="148" y="198" width="158" height="52" rx="12"></rect>
+                  <rect class="gem-chat-c" x="126" y="270" width="188" height="52" rx="12"></rect>
+                  <text class="gem-chat-text" x="146" y="158">B 6/23 請假</text>
+                  <text class="gem-chat-text" x="168" y="230">先查表...</text>
+                  <text class="gem-chat-text" x="146" y="302">不用重排</text>
+                  <rect class="gem-rule-card" x="392" y="86" width="220" height="238" rx="14"></rect>
+                  <text class="gem-rule-title" x="426" y="132">Gem 固定規則</text>
+                  <text class="gem-rule-line" x="426" y="176">六休一</text>
+                  <text class="gem-rule-line" x="426" y="216">班距 11 小時</text>
+                  <text class="gem-rule-line" x="426" y="256">先查表再重排</text>
+                </g>
+
+                <g class="outcome-mode outcome-bonus">
+                  <rect class="bonus-card" x="84" y="76" width="168" height="248" rx="14"></rect>
+                  <rect class="bonus-card" x="276" y="76" width="168" height="248" rx="14"></rect>
+                  <rect class="bonus-card" x="468" y="76" width="168" height="248" rx="14"></rect>
+                  <circle class="bonus-lens" cx="168" cy="166" r="42"></circle>
+                  <path class="bonus-wave" d="M304 194 C324 154 344 234 364 194 S404 154 424 194"></path>
+                  <path class="bonus-play" d="M540 142 594 174 540 206z"></path>
+                  <text class="bonus-label" x="132" y="272">AI 修圖</text>
+                  <text class="bonus-label" x="318" y="272">Suno 歌曲</text>
+                  <text class="bonus-label" x="506" y="272">影片示範</text>
+                </g>
+              </svg>
+            </div>
+
+            <div class="outcome-copy">
+              <span data-outcome-tag>Word 文件</span>
+              <h3 data-outcome-title>2026 六、七月份班表初稿</h3>
+              <p data-outcome-desc>AI 根據補充後的規則產出班表文件，再由人確認假日、班距、工時與特殊請假。</p>
+              <strong data-outcome-conclusion>課堂結論：AI 可以很快產出草稿，但要由人做最後規則檢查。</strong>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section class="content-section">
+        <div class="section-heading reveal">
+          <p class="eyebrow">Quick Check</p>
+          <h2>課後 1 分鐘小檢查</h2>
+          <p>確認第四堂最重要的觀念：真實工作、規則補充、缺漏檢查、Gem 小助手與人工確認。</p>
+        </div>
+        <div class="quiz-panel reveal" data-quiz data-quiz-name="C04">
+          <article class="quiz-card" data-quiz-question>
+            <span>01</span>
+            <h3>第四堂實際最核心的案例是什麼？</h3>
+            <button type="button" data-correct="false">只練習把 LINE 飲料訂單排成表格</button>
+            <button type="button" data-correct="true">學員帶來的六、七月份真實排班問題</button>
+            <button type="button" data-correct="false">只練習把照片變成卡通風格</button>
+            <p class="quiz-feedback"></p>
+          </article>
+          <article class="quiz-card" data-quiz-question>
+            <span>02</span>
+            <h3>為什麼不要一開始就叫 AI 直接排班？</h3>
+            <button type="button" data-correct="true">因為規則可能不完整，需要先找缺漏與邏輯衝突</button>
+            <button type="button" data-correct="false">因為 AI 完全不能處理表格</button>
+            <button type="button" data-correct="false">因為語音輸入一定比打字差</button>
+            <p class="quiz-feedback"></p>
+          </article>
+          <article class="quiz-card" data-quiz-question>
+            <span>03</span>
+            <h3>課堂中把 AI 比喻成「很聰明的工讀生」是想提醒什麼？</h3>
+            <button type="button" data-correct="false">AI 已經知道公司所有潛規則</button>
+            <button type="button" data-correct="true">AI 很會處理，但需要你把背景和規則講清楚</button>
+            <button type="button" data-correct="false">AI 只適合聊天，不適合工作</button>
+            <p class="quiz-feedback"></p>
+          </article>
+          <article class="quiz-card" data-quiz-question>
+            <span>04</span>
+            <h3>B 同仁 6/23 請假時，AI 檢查後得到什麼結論？</h3>
+            <button type="button" data-correct="true">B 當天原本沒有排班，所以不需要重排</button>
+            <button type="button" data-correct="false">一定要把全部班表刪掉重做</button>
+            <button type="button" data-correct="false">只要請 C 同仁連續上班就好</button>
+            <p class="quiz-feedback"></p>
+          </article>
+          <article class="quiz-card" data-quiz-question>
+            <span>05</span>
+            <h3>建立 Gemini Gem 的主要用途是什麼？</h3>
+            <button type="button" data-correct="false">讓 AI 永久自動做所有決策，不需要人看</button>
+            <button type="button" data-correct="true">保存常用規則，讓下次能用同一套背景快速檢查新情境</button>
+            <button type="button" data-correct="false">把所有工作資料公開到網路上</button>
+            <p class="quiz-feedback"></p>
+          </article>
+          <div class="quiz-result" aria-live="polite">
+            <strong>完成 0 / 5 題</strong>
+            <small>答完五題後，這裡會顯示你的 C04 小檢查結果。</small>
+          </div>
+        </div>
+      </section>
+
+      <section class="content-section split next-lesson">
+        <div class="section-heading reveal">
+          <p class="eyebrow">Next</p>
+          <h2>與第五堂的銜接</h2>
+          <p>
+            第四堂看見 AI 可以處理真實工作流程；第五堂會把 AI 帶進音樂創作，練習用 Suno 把主題、歌詞、曲風與授權觀念串起來。
+          </p>
+        </div>
+        <a class="next-card reveal" href="c05.html">
+          <span>C05</span>
+          <strong>Suno 音樂創作</strong>
+          <p>把生活故事、城市印象與課堂主題變成歌曲，並理解 AI 音樂的授權與使用邊界。</p>
+        </a>
+      </section>
+    </main>
+
+    <nav class="mobile-bottom-nav" aria-label="手機導覽">
+      <a href="../index.html" aria-label="首頁">
+        <svg><use href="#icon-home"></use></svg>
+        <span>首頁</span>
+      </a>
+      <a href="../index.html#journey" aria-label="課程">
+        <svg><use href="#icon-course"></use></svg>
+        <span>課程</span>
+      </a>
+      <a href="../index.html#outcomes" aria-label="成果">
+        <svg><use href="#icon-gallery"></use></svg>
+        <span>成果</span>
+      </a>
+      <a href="../index.html#message-wall" aria-label="留言">
+        <svg><use href="#icon-message"></use></svg>
+        <span>留言</span>
+      </a>
+      <a href="../index.html#about" aria-label="關於">
+        <svg><use href="#icon-info"></use></svg>
+        <span>關於</span>
+      </a>
+    </nav>
+
+    <script src="../assets/app.js"></script>
+  </body>
+</html>

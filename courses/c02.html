@@ -1,0 +1,488 @@
+<!doctype html>
+<html lang="zh-Hant">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>C02 第二堂課 | AI 入門應用班成果展</title>
+    <meta
+      name="description"
+      content="第二堂課內容：ChatGPT、Gemini、Claude 三大 AI 助手比較，同題練習、雜亂資料整理、提示詞四要素與資安提醒。"
+    >
+    <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="../assets/styles.css">
+  </head>
+  <body class="lesson-page">
+    <svg aria-hidden="true" class="icon-sprite">
+      <symbol id="icon-home" viewBox="0 0 24 24">
+        <path d="M3 10.8 12 3l9 7.8v9.2a1 1 0 0 1-1 1h-5.2v-6.2H9.2V21H4a1 1 0 0 1-1-1z"/>
+      </symbol>
+      <symbol id="icon-course" viewBox="0 0 24 24">
+        <path d="M5 4.8h10.5a3.5 3.5 0 0 1 3.5 3.5V20H8.5A3.5 3.5 0 0 1 5 16.5z"/>
+        <path d="M8.5 4.8A3.5 3.5 0 0 0 5 8.3v8.2A3.5 3.5 0 0 1 8.5 13H19"/>
+      </symbol>
+      <symbol id="icon-gallery" viewBox="0 0 24 24">
+        <rect x="4" y="5" width="16" height="14" rx="1"/>
+        <path d="m7 16 3.2-3.4 2.4 2.3 2.8-3.8L19 16"/>
+        <circle cx="9" cy="9" r="1.2"/>
+      </symbol>
+      <symbol id="icon-message" viewBox="0 0 24 24">
+        <path d="M5 5h14v10H9l-4 4z"/>
+        <path d="M8 9h8M8 12h5"/>
+      </symbol>
+      <symbol id="icon-info" viewBox="0 0 24 24">
+        <circle cx="12" cy="12" r="8"/>
+        <path d="M12 10v6M12 7.5h.01"/>
+      </symbol>
+      <symbol id="icon-arrow" viewBox="0 0 24 24">
+        <path d="M19 12H5M11 6l-6 6 6 6"/>
+      </symbol>
+      <symbol id="icon-copy" viewBox="0 0 24 24">
+        <rect x="8" y="8" width="11" height="11" rx="1"/>
+        <path d="M5 15V5h10"/>
+      </symbol>
+      <symbol id="icon-shield" viewBox="0 0 24 24">
+        <path d="M12 3 19 6v5.2c0 4.1-2.8 7.7-7 9.8-4.2-2.1-7-5.7-7-9.8V6z"/>
+        <path d="m8.5 12 2.2 2.2 4.8-5"/>
+      </symbol>
+    </svg>
+
+    <header class="site-header">
+      <a class="brand" href="../index.html" aria-label="回到成果展首頁">
+        <span class="brand-mark">AI</span>
+        <span>
+          <strong>婦女學苑 AI 成果展</strong>
+          <small>C02 第二堂課</small>
+        </span>
+      </a>
+      <nav class="desktop-nav" aria-label="主要導覽">
+        <a href="../index.html#journey">十堂課</a>
+        <a href="../index.html#outcomes">成果</a>
+        <a href="../index.html#map">學習地圖</a>
+        <a href="../index.html#message-wall">留言</a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="lesson-hero">
+        <div class="lesson-hero-copy reveal">
+          <a class="back-link" href="../index.html#journey">
+            <svg><use href="#icon-arrow"></use></svg>
+            回到十堂課旅程
+          </a>
+          <p class="eyebrow">C02 | 2026.05.12</p>
+          <h1>同一題問三個 AI，看懂回答風格與可信度</h1>
+          <p>
+            第二堂課把 Gemini、ChatGPT、Claude 都打開，用同一份雜亂資料練習整理、比較與追問，學會不要只相信第一個答案。
+          </p>
+        </div>
+        <div class="lesson-facts reveal" aria-label="第二堂課資訊">
+          <div>
+            <span>時間</span>
+            <strong>週二 18:30-20:30</strong>
+          </div>
+          <div>
+            <span>地點</span>
+            <strong>嘉義市婦女學苑</strong>
+          </div>
+          <div>
+            <span>主軸</span>
+            <strong>三大 AI、同題比較、資料整理</strong>
+          </div>
+        </div>
+      </section>
+
+      <section class="content-section lesson-content">
+        <div class="lesson-takeaway reveal">
+          <span class="lesson-number">帶走一句話</span>
+          <h2>同一題問多家，才看得出 AI 的差異。</h2>
+        </div>
+
+        <div class="lesson-grid">
+          <article class="lesson-card reveal">
+            <h2>本堂重點</h2>
+            <ul class="check-list">
+              <li>確認 Gemini、ChatGPT、Claude 三個平台都能登入與輸入問題。</li>
+              <li>用同一份資料測試三家 AI 的整理效果與回答風格。</li>
+              <li>練習提示詞四要素：角色、任務、背景資料、輸出格式。</li>
+              <li>觀察 AI 是否會主動標記矛盾、缺漏與需要確認的地方。</li>
+              <li>再次提醒：練習資料可以上傳，真實個資與公司機密不可以。</li>
+            </ul>
+          </article>
+
+          <article class="lesson-card reveal">
+            <h2>不是比誰最強，而是比誰最適合</h2>
+            <p>
+              這堂課最重要的發現是：不同 AI 的個性不一樣。有的積極延伸、有的簡潔整齊、有的會先抓問題。真正會用 AI，不是背工具名稱，而是知道什麼任務適合用哪一種回答風格。
+            </p>
+          </article>
+        </div>
+      </section>
+
+      <section class="content-section surface c02-model-section">
+        <div class="section-heading reveal">
+          <p class="eyebrow">AI Platform Compare</p>
+          <h2>三大 AI 助手的課堂觀察</h2>
+          <p>以下不是絕對排名，而是第二堂課實際操作時觀察到的差異，適合當成初學者的選用參考。</p>
+        </div>
+
+        <div class="model-compare-grid">
+          <article class="model-card reveal model-chatgpt">
+            <span>ChatGPT</span>
+            <h3>創意延伸多，適合發想與改寫</h3>
+            <p>回答通常很積極，會提供很多建議與延伸方向；但遇到資料矛盾時，不一定會先停下來追問。</p>
+            <div class="model-meter" aria-label="ChatGPT 課堂觀察指標">
+              <i style="--w: 88%">延伸發想</i>
+              <i style="--w: 72%">格式整理</i>
+              <i style="--w: 54%">主動追問</i>
+            </div>
+          </article>
+          <article class="model-card reveal model-gemini">
+            <span>Gemini</span>
+            <h3>清楚簡潔，適合 Google 生態使用者</h3>
+            <p>整理速度與格式感不錯，也適合和 Google 帳號、雲端資料、日曆或信件情境銜接。</p>
+            <div class="model-meter" aria-label="Gemini 課堂觀察指標">
+              <i style="--w: 76%">簡潔清楚</i>
+              <i style="--w: 80%">格式整理</i>
+              <i style="--w: 62%">工具整合</i>
+            </div>
+          </article>
+          <article class="model-card reveal model-claude">
+            <span>Claude</span>
+            <h3>邏輯謹慎，會先抓矛盾與缺漏</h3>
+            <p>課堂中它曾注意到資料標題與內容不一致，會反過來問更明確的需求，適合複雜資料整理。</p>
+            <div class="model-meter" aria-label="Claude 課堂觀察指標">
+              <i style="--w: 86%">邏輯檢查</i>
+              <i style="--w: 78%">主動追問</i>
+              <i style="--w: 70%">複雜整理</i>
+            </div>
+          </article>
+        </div>
+        <aside class="model-update-note reveal">
+          <strong>這不是永久排名</strong>
+          <p>AI 服務會隨著新模型推出、介面更新、免費額度調整而改變。這裡呈現的是 2026/05/12 課堂操作時的觀察方式：看風格、看限制、看適不適合自己的任務，而不是背一個永遠不變的答案。</p>
+        </aside>
+      </section>
+
+      <section class="content-section surface">
+        <div class="section-heading reveal">
+          <p class="eyebrow">Same Question</p>
+          <h2>同一份資料，丟給三個 AI 比一比</h2>
+          <p>第二堂課的核心不是一次問到完美，而是用同一題觀察：誰整理清楚？誰會提醒風險？誰比較適合我的任務？</p>
+        </div>
+
+        <div class="same-question-lab reveal">
+          <figure class="same-question-visual" aria-label="同一題輸入三個 AI 的比較流程">
+            <svg viewBox="0 0 860 430" role="img" aria-labelledby="same-question-title">
+              <title id="same-question-title">同一題輸入 ChatGPT、Gemini、Claude，再由人比較</title>
+              <rect class="sq-bg" x="26" y="30" width="808" height="370" rx="18"></rect>
+              <rect class="sq-input" x="72" y="172" width="170" height="82" rx="12"></rect>
+              <text x="157" y="206">同一份資料</text>
+              <text x="157" y="232">同一個問題</text>
+              <path class="sq-line line-a" d="M248 196 C315 120 352 100 408 102"></path>
+              <path class="sq-line line-b" d="M248 214 C322 214 350 214 408 214"></path>
+              <path class="sq-line line-c" d="M248 232 C315 304 352 324 408 326"></path>
+              <g class="sq-model sq-a">
+                <rect x="410" y="68" width="150" height="72" rx="12"></rect>
+                <text x="485" y="111">ChatGPT</text>
+              </g>
+              <g class="sq-model sq-b">
+                <rect x="410" y="178" width="150" height="72" rx="12"></rect>
+                <text x="485" y="221">Gemini</text>
+              </g>
+              <g class="sq-model sq-c">
+                <rect x="410" y="288" width="150" height="72" rx="12"></rect>
+                <text x="485" y="331">Claude</text>
+              </g>
+              <path class="sq-line line-d" d="M566 104 C626 116 654 140 690 170"></path>
+              <path class="sq-line line-e" d="M566 214 C624 214 652 214 690 214"></path>
+              <path class="sq-line line-f" d="M566 324 C626 304 654 276 690 244"></path>
+              <rect class="sq-human" x="690" y="166" width="116" height="96" rx="12"></rect>
+              <path class="sq-check" d="m726 216 18 18 34-42"></path>
+              <text x="748" y="292">人來判斷</text>
+            </svg>
+          </figure>
+
+          <div class="comparison-checklist">
+            <article>
+              <span>看格式</span>
+              <p>表格欄位是否清楚？有沒有把電話、時段、備註統一？</p>
+            </article>
+            <article>
+              <span>看提醒</span>
+              <p>AI 是否標出資料矛盾、缺漏、需要確認的地方？</p>
+            </article>
+            <article>
+              <span>看用途</span>
+              <p>輸出是給自己看、給主管看，還是要直接拿去通知別人？</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="content-section c02-response-section">
+        <div class="section-heading reveal">
+          <p class="eyebrow">Response Lab</p>
+          <h2>同一題的三種回應觀察</h2>
+          <p>這裡用課堂的飲料訂單情境做成互動展示。點不同 AI，觀察它可能會把重點放在哪裡。</p>
+        </div>
+
+        <div class="response-lab reveal" data-response-lab>
+          <article class="response-source">
+            <div class="prompt-card-header">
+              <span>原始資料片段</span>
+            </div>
+            <pre>[11:45] 林淑惠：珍奶一杯 正常甜 少冰
+[12:08] 邱雅琪：珍奶少糖少冰大的謝謝
+[12:45] 王大明：我老婆說改成茉莉綠茶無糖去冰
+[12:48] 蔡志遠：拿鐵1+黑糖鮮奶茶1，甜冰都不變
+[13:15] 劉淑婷：我媽那杯薑汁撞奶取消</pre>
+          </article>
+
+          <div class="response-stage">
+            <div class="response-tabs" role="tablist" aria-label="選擇 AI 回應觀察">
+              <button type="button" class="is-selected" data-response-choice="chatgpt">ChatGPT</button>
+              <button type="button" data-response-choice="gemini">Gemini</button>
+              <button type="button" data-response-choice="claude">Claude</button>
+            </div>
+            <article class="response-output" aria-live="polite">
+              <span data-response-label>ChatGPT 觀察</span>
+              <h3 data-response-title>會主動補很多整理建議</h3>
+              <p data-response-summary>適合快速得到完整表格、統計與後續提醒，但仍要人工確認更改與取消是否處理正確。</p>
+              <pre data-response-text>輸出傾向：
+1. 先整理成訂購表格
+2. 額外統計總杯數
+3. 補上可能需要確認的品項
+4. 可能加入一些你沒有明確要求的建議</pre>
+              <div class="response-note">
+                <strong>課堂提醒</strong>
+                <p>這裡是依照課堂觀察模擬的可能差異，不代表每次、每個版本都會完全一樣。</p>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="content-section surface c02-observer-section">
+        <div class="section-heading reveal">
+          <p class="eyebrow">Compare Lab</p>
+          <h2>同題實驗：看三家 AI 可能產生什麼差異</h2>
+          <p>這裡不連線到真正模型，而是依照第二堂課的觀察，模擬同一題丟給三家 AI 後可能出現的回答差異。重點是學會判讀結果，而不是背哪一家永遠最好。</p>
+        </div>
+
+        <div class="experiment-lab reveal" data-experiment-lab>
+          <div class="experiment-tabs" aria-label="選擇同題實驗">
+            <button type="button" class="is-selected" data-experiment-scenario="drink">飲料訂單</button>
+            <button type="button" data-experiment-scenario="volunteer">志工名單</button>
+            <button type="button" data-experiment-scenario="document">公文白話</button>
+          </div>
+
+          <article class="experiment-task">
+            <span data-experiment-tag>課堂題目 B1</span>
+            <h3 data-experiment-title>LINE 飲料訂單整理</h3>
+            <p data-experiment-desc>原始訊息裡有加訂、改單、取消、品項不確定，人工整理很容易漏掉。</p>
+            <pre data-experiment-prompt>請把這份 LINE 群組飲料訂購訊息整理成訂購統計表，欄位包含訂購人、品項、甜度、冰塊、數量、備註，並列出更改與取消紀錄。</pre>
+          </article>
+
+          <div class="experiment-outputs">
+            <article>
+              <span>ChatGPT 可能結果</span>
+              <h3 data-chatgpt-title>補很多後續建議</h3>
+              <pre data-chatgpt-output>表格 + 總杯數 + 收款提醒 + 分送建議</pre>
+            </article>
+            <article>
+              <span>Gemini 可能結果</span>
+              <h3 data-gemini-title>表格乾淨好讀</h3>
+              <pre data-gemini-output>訂購統計表 + 特殊備註清單</pre>
+            </article>
+            <article>
+              <span>Claude 可能結果</span>
+              <h3 data-claude-title>先抓更改與取消</h3>
+              <pre data-claude-output>已確認訂單 + 更改紀錄 + 取消紀錄 + 需確認品項</pre>
+            </article>
+          </div>
+
+          <div class="experiment-conclusion" aria-live="polite">
+            <strong data-experiment-best>課堂判讀：先用 Gemini 做乾淨表格，再用 Claude 抓漏。</strong>
+            <p data-experiment-conclusion>如果目標是快速整理飲料單，Gemini 的表格感很好；但有改單、取消、品項不確定時，Claude 類型的「抓疑點」很有價值。ChatGPT 則適合補後續收款、分送、通知流程。</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="content-section">
+        <div class="section-heading reveal">
+          <p class="eyebrow">Practice Materials</p>
+          <h2>22 題練習素材地圖</h2>
+          <p>課堂素材刻意做得雜亂，讓學員體驗「人工整理」和「AI 整理」的差異。目標不是做完全部，而是做 2 到 3 題，真正感受到流程。</p>
+        </div>
+        <div class="practice-selector reveal" data-practice-lab>
+          <div class="practice-buttons" aria-label="選擇練習素材分類">
+            <button type="button" class="is-selected" data-practice-choice="a">A 名單</button>
+            <button type="button" data-practice-choice="b">B 訂購</button>
+            <button type="button" data-practice-choice="c">C 公文</button>
+            <button type="button" data-practice-choice="d">D 健康</button>
+            <button type="button" data-practice-choice="e">E 教育</button>
+            <button type="button" data-practice-choice="f">F 商業</button>
+            <button type="button" data-practice-choice="g">G 會議</button>
+          </div>
+          <article class="practice-detail" aria-live="polite">
+            <span data-practice-code>A</span>
+            <h3 data-practice-title>名單類：把雜亂資料變成可用表格</h3>
+            <p data-practice-desc>志工報名、家長聯絡、社區團員出席紀錄。適合練習欄位統一、電話格式、缺漏標記。</p>
+            <div class="practice-question-list" data-practice-questions>
+              <article><strong>A1 志工名單整理</strong><span>整理姓名、電話、時段與備註。</span></article>
+              <article><strong>A2 家長聯絡名單</strong><span>依班級、座號與聯絡方式分類。</span></article>
+              <article><strong>A3 出席紀錄分析</strong><span>統計 5 個月出席次數與全勤狀況。</span></article>
+            </div>
+            <pre data-practice-prompt>請把這份志工報名名單整理成表格，欄位包含：姓名、電話、可參加時段、備註。請另外列出資料不完整或需要確認的地方。</pre>
+            <div class="practice-result">
+              <strong>可能產出</strong>
+              <p data-practice-result>一張可複查的名單表、時段統計、資訊不完整清單。</p>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section class="content-section surface">
+        <div class="section-heading reveal">
+          <p class="eyebrow">Student Works</p>
+          <h2>三家 AI 生成論文成果：從一句題目到三份草稿</h2>
+          <p>課堂後段示範較長任務：用「國小輔導老師、家庭功能不彰特殊生、悲傷治療、情緒安穩、繼續學習」這組需求，讓三家 AI 產出研究型文件，再比較它們怎麼收斂題目。</p>
+        </div>
+        <div class="research-lab reveal">
+          <article class="research-prompt">
+            <span>課堂輸入</span>
+            <h3>從一句需求開始</h3>
+            <p>「你是一位國小輔導老師，請針對家庭功能不彰的特殊生，研究如何進行悲傷治療，讓學生安穩情緒並繼續學習，產出一份完整論文或研究計畫。」</p>
+          </article>
+          <div class="research-flow">
+            <article><span>01</span><h3>先拆題目</h3><p>角色、學生對象、家庭背景、介入目標、想要的格式。</p></article>
+            <article><span>02</span><h3>啟動研究</h3><p>不同 AI 會搜尋、規劃、詢問或產出不同深度的草稿。</p></article>
+            <article><span>03</span><h3>比較成果</h3><p>看結構、理論基礎、案例具體度、是否標示限制。</p></article>
+            <article><span>04</span><h3>人工查證</h3><p>專業用途要補可靠文獻、檢查引用，不直接交出去。</p></article>
+          </div>
+          <div class="research-cards">
+            <article>
+              <span>ChatGPT</span>
+              <h3>完整論文草案</h3>
+              <p>產出完整章節架構，包含摘要、研究方法、12 週複合式介入方案與預期結果，篇幅很長、延伸很多。</p>
+            </article>
+            <article>
+              <span>Claude</span>
+              <h3>行動研究論文感</h3>
+              <p>收斂成「國小輔導教師協助家庭功能不彰之自閉症類群學生」的行動研究，案例與研究循環更具體。</p>
+            </article>
+            <article>
+              <span>Gemini</span>
+              <h3>研究計畫與策略</h3>
+              <p>比較像實務研究計畫，清楚列出核心困境、介入階段與情緒安穩策略，篇幅較精簡。</p>
+            </article>
+          </div>
+          <div class="research-compare-table">
+            <div><strong>比較項目</strong><strong>ChatGPT</strong><strong>Claude</strong><strong>Gemini</strong></div>
+            <div><span>產出形式</span><span>完整論文草案</span><span>行動研究論文</span><span>研究計畫</span></div>
+            <div><span>最明顯優點</span><span>架構完整、篇幅長</span><span>案例具體、題目收斂</span><span>策略清楚、容易讀</span></div>
+            <div><span>最大風險</span><span>可能補太多未查證內容</span><span>案例與數據需確認</span><span>深度可能不足</span></div>
+          </div>
+          <div class="research-conclusion">
+            <strong>這堂課得到的結論</strong>
+            <p>AI 可以很快產出長篇草稿，甚至看起來像正式論文；但如果沒有提供可靠參考資料，它會自己推測與補足。越專業的用途，越需要人工查證、補文獻、修研究設計。</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="content-section surface">
+        <div class="section-heading reveal">
+          <p class="eyebrow">Quick Check</p>
+          <h2>課後 1 分鐘小檢查</h2>
+          <p>確認第二堂課的核心觀念：比較、清楚下指令、看出缺漏，以及保護資料。</p>
+        </div>
+        <div class="quiz-panel reveal" data-quiz data-quiz-name="C02">
+          <article class="quiz-card" data-quiz-question>
+            <span>01</span>
+            <h3>第二堂課為什麼要同一題問三個 AI？</h3>
+            <button type="button" data-correct="false">因為一定有唯一最正確的 AI</button>
+            <button type="button" data-correct="true">為了比較回答風格、格式與提醒能力</button>
+            <button type="button" data-correct="false">因為問越多次就不用檢查</button>
+            <p class="quiz-feedback"></p>
+          </article>
+          <article class="quiz-card" data-quiz-question>
+            <span>02</span>
+            <h3>整理雜亂名單時，哪一種要求比較好？</h3>
+            <button type="button" data-correct="true">指定欄位，並要求列出需確認事項</button>
+            <button type="button" data-correct="false">只說「整理一下」</button>
+            <button type="button" data-correct="false">叫 AI 自己決定所有缺漏資料</button>
+            <p class="quiz-feedback"></p>
+          </article>
+          <article class="quiz-card" data-quiz-question>
+            <span>03</span>
+            <h3>課堂觀察中，Claude 比較明顯的特點是？</h3>
+            <button type="button" data-correct="false">完全不能用中文溝通</button>
+            <button type="button" data-correct="true">比較會抓矛盾，必要時先追問</button>
+            <button type="button" data-correct="false">只適合拿來畫圖</button>
+            <p class="quiz-feedback"></p>
+          </article>
+          <article class="quiz-card" data-quiz-question>
+            <span>04</span>
+            <h3>哪一種資料不適合直接上傳給 AI？</h3>
+            <button type="button" data-correct="false">老師提供的虛構練習素材</button>
+            <button type="button" data-correct="true">真實病歷、身分證、公司機密與他人個資</button>
+            <button type="button" data-correct="false">自己寫的公開活動文案</button>
+            <p class="quiz-feedback"></p>
+          </article>
+          <article class="quiz-card" data-quiz-question>
+            <span>05</span>
+            <h3>AI 產出的長篇論文或報告，最需要注意什麼？</h3>
+            <button type="button" data-correct="false">看起來長就代表可以直接交出去</button>
+            <button type="button" data-correct="true">來源、事實、引用與內容都要再查證</button>
+            <button type="button" data-correct="false">只要是三家 AI 都寫過就不會錯</button>
+            <p class="quiz-feedback"></p>
+          </article>
+          <div class="quiz-result" aria-live="polite">
+            <strong>完成 0 / 5 題</strong>
+            <small>答完五題後，這裡會顯示你的 C02 小檢查結果。</small>
+          </div>
+        </div>
+      </section>
+
+      <section class="content-section split next-lesson">
+        <div class="section-heading reveal">
+          <p class="eyebrow">Next</p>
+          <h2>與第三堂的銜接</h2>
+          <p>
+            第二堂先比較三個 AI 的回答差異；第三堂開始把這些技巧放進完整會議流程，練習角色準備、錄音整理與 NotebookLM 資料再加工。
+          </p>
+        </div>
+        <a class="next-card reveal" href="c03.html">
+          <span>C03</span>
+          <strong>AI 會議專案室：從角色準備到正式紀錄</strong>
+          <p>把「比較 AI」的經驗，轉成能處理會議、錄音、附件與成果輸出的工作流程。</p>
+        </a>
+      </section>
+    </main>
+
+    <nav class="mobile-bottom-nav" aria-label="手機導覽">
+      <a href="../index.html" aria-label="首頁">
+        <svg><use href="#icon-home"></use></svg>
+        <span>首頁</span>
+      </a>
+      <a href="../index.html#journey" aria-label="課程">
+        <svg><use href="#icon-course"></use></svg>
+        <span>課程</span>
+      </a>
+      <a href="../index.html#outcomes" aria-label="成果">
+        <svg><use href="#icon-gallery"></use></svg>
+        <span>成果</span>
+      </a>
+      <a href="../index.html#message-wall" aria-label="留言">
+        <svg><use href="#icon-message"></use></svg>
+        <span>留言</span>
+      </a>
+      <a href="../index.html#about" aria-label="關於">
+        <svg><use href="#icon-info"></use></svg>
+        <span>關於</span>
+      </a>
+    </nav>
+
+    <script src="../assets/app.js"></script>
+  </body>
+</html>

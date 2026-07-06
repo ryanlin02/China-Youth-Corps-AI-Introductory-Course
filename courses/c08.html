@@ -1,0 +1,436 @@
+<!doctype html>
+<html lang="zh-Hant">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>C08 第八堂課 | AI 入門應用班成果展</title>
+    <meta
+      name="description"
+      content="第八堂課實際內容：Codex 讀取照片資料夾，製作婦女學苑招生影片、手機直式版、活潑版、分鏡文件、Skill 與 AI 問診流程。"
+    >
+    <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="../assets/styles.css">
+  </head>
+  <body class="lesson-page">
+    <svg aria-hidden="true" class="icon-sprite">
+      <symbol id="icon-home" viewBox="0 0 24 24">
+        <path d="M3 10.8 12 3l9 7.8v9.2a1 1 0 0 1-1 1h-5.2v-6.2H9.2V21H4a1 1 0 0 1-1-1z"/>
+      </symbol>
+      <symbol id="icon-course" viewBox="0 0 24 24">
+        <path d="M5 4.8h10.5a3.5 3.5 0 0 1 3.5 3.5V20H8.5A3.5 3.5 0 0 1 5 16.5z"/>
+        <path d="M8.5 4.8A3.5 3.5 0 0 0 5 8.3v8.2A3.5 3.5 0 0 1 8.5 13H19"/>
+      </symbol>
+      <symbol id="icon-gallery" viewBox="0 0 24 24">
+        <rect x="4" y="5" width="16" height="14" rx="1"/>
+        <path d="m7 16 3.2-3.4 2.4 2.3 2.8-3.8L19 16"/>
+        <circle cx="9" cy="9" r="1.2"/>
+      </symbol>
+      <symbol id="icon-message" viewBox="0 0 24 24">
+        <path d="M5 5h14v10H9l-4 4z"/>
+        <path d="M8 9h8M8 12h5"/>
+      </symbol>
+      <symbol id="icon-info" viewBox="0 0 24 24">
+        <circle cx="12" cy="12" r="8"/>
+        <path d="M12 10v6M12 7.5h.01"/>
+      </symbol>
+      <symbol id="icon-arrow" viewBox="0 0 24 24">
+        <path d="M19 12H5M11 6l-6 6 6 6"/>
+      </symbol>
+    </svg>
+
+    <header class="site-header">
+      <a class="brand" href="../index.html" aria-label="回到成果展首頁">
+        <span class="brand-mark">AI</span>
+        <span>
+          <strong>婦女學苑 AI 成果展</strong>
+          <small>C08 第八堂課</small>
+        </span>
+      </a>
+      <nav class="desktop-nav" aria-label="主要導覽">
+        <a href="../index.html#journey">十堂課</a>
+        <a href="../index.html#outcomes">成果</a>
+        <a href="../index.html#map">學習地圖</a>
+        <a href="../index.html#message-wall">留言</a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="lesson-hero c08-hero">
+        <div class="lesson-hero-copy reveal">
+          <a class="back-link" href="../index.html#journey">
+            <svg><use href="#icon-arrow"></use></svg>
+            回到十堂課旅程
+          </a>
+          <p class="eyebrow">C08 | 2026.06.23</p>
+          <h1>Codex 製片廠：把照片資料夾變成招生影片與分鏡文件</h1>
+          <p>
+            第八堂原本規劃 AI 問診室，實際上課改成 Codex 實作：讀取婦女學苑照片資料夾、生成橫式與手機直式招生影片、修正字幕與電話、輸出主管審閱分鏡文件，再把流程整理成可重複使用的 Skill。
+          </p>
+        </div>
+        <figure class="c08-hero-factory reveal" aria-label="第八堂 Codex 製片廠動畫">
+          <svg viewBox="0 0 760 500" role="img" aria-labelledby="c08-hero-title c08-hero-desc">
+            <title id="c08-hero-title">Codex 製片廠</title>
+            <desc id="c08-hero-desc">照片、音樂與需求進入 Codex，輸出影片、分鏡文件與 Skill。</desc>
+            <rect class="factory-shell" x="28" y="34" width="704" height="410" rx="24"></rect>
+            <g class="factory-folder">
+              <path d="M76 124h120l18 26h142a18 18 0 0 1 18 18v142a18 18 0 0 1-18 18H76a18 18 0 0 1-18-18V142a18 18 0 0 1 18-18z"></path>
+              <text x="112" y="218">照片資料夾</text>
+              <text x="124" y="254">6-8 張素材</text>
+            </g>
+            <g class="factory-codex">
+              <rect x="422" y="96" width="210" height="188" rx="20"></rect>
+              <text x="472" y="154">Codex</text>
+              <text x="456" y="192">讀取素材</text>
+              <text x="456" y="230">生成腳本</text>
+            </g>
+            <path class="factory-wire wire-1" d="M374 220 C404 220 390 190 422 190"></path>
+            <g class="factory-output out-video">
+              <rect x="84" y="360" width="150" height="58" rx="12"></rect>
+              <text x="114" y="396">影片</text>
+            </g>
+            <g class="factory-output out-doc">
+              <rect x="304" y="360" width="150" height="58" rx="12"></rect>
+              <text x="334" y="396">分鏡</text>
+            </g>
+            <g class="factory-output out-skill">
+              <rect x="524" y="360" width="150" height="58" rx="12"></rect>
+              <text x="554" y="396">Skill</text>
+            </g>
+            <path class="factory-wire wire-2" d="M512 284 C416 326 246 326 160 360"></path>
+            <path class="factory-wire wire-3" d="M528 284 C502 326 420 326 380 360"></path>
+            <path class="factory-wire wire-4" d="M548 284 C586 326 604 326 600 360"></path>
+          </svg>
+        </figure>
+      </section>
+
+      <section class="content-section lesson-content">
+        <div class="lesson-takeaway reveal">
+          <span class="lesson-number">帶走一句話</span>
+          <h2>第八堂不是學剪片按鈕，而是學會把真實需求、素材、修改意見變成 AI 能重複執行的流程。</h2>
+        </div>
+
+        <div class="c08-reality-grid reveal">
+          <article>
+            <span>原教案</span>
+            <h2>AI 問診室</h2>
+            <p>原本設計是練習卡關時先問 AI，但當日實際以 Codex 影片製作作為大型問診案例。</p>
+          </article>
+          <article>
+            <span>實際任務</span>
+            <h2>招生影片實作</h2>
+            <p>從照片資料夾產出橫式、手機直式、活潑版影片，並做分鏡文件與修改說明。</p>
+          </article>
+          <article>
+            <span>核心能力</span>
+            <h2>修正與重用</h2>
+            <p>影片不是一次就完美，重點是描述問題、請 AI 修改，再把成功流程保存成 Skill。</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="content-section surface">
+        <div class="section-heading reveal">
+          <p class="eyebrow">Production Pipeline</p>
+          <h2>照片資料夾進場，Codex 變出三種成果</h2>
+          <p>這裡把第八堂的製片流程做成互動產線。點不同階段，看看 Codex 實際做了什麼、產出了什麼。</p>
+        </div>
+
+        <div class="c08-pipeline reveal" data-c08-pipeline>
+          <div class="pipeline-controls" aria-label="選擇製片階段">
+            <button type="button" class="is-selected" data-pipeline-step="folder">指定資料夾</button>
+            <button type="button" data-pipeline-step="brief">說明影片需求</button>
+            <button type="button" data-pipeline-step="render">輸出影片版本</button>
+            <button type="button" data-pipeline-step="review">產出審閱文件</button>
+            <button type="button" data-pipeline-step="skill">整理成 Skill</button>
+          </div>
+          <article class="pipeline-stage" aria-live="polite">
+            <div class="pipeline-visual" data-pipeline-visual data-step="folder">
+              <svg viewBox="0 0 780 360" role="img" aria-labelledby="pipe-title pipe-desc">
+                <title id="pipe-title">Codex 製片流程</title>
+                <desc id="pipe-desc">從資料夾、需求、輸出版本、分鏡文件到 Skill 的流程動畫。</desc>
+                <rect class="pipe-bg" x="24" y="28" width="732" height="304" rx="20"></rect>
+                <path class="pipe-track" d="M94 182 H688"></path>
+                <g class="pipe-node node-folder">
+                  <circle cx="116" cy="182" r="44"></circle>
+                  <text x="92" y="188">資料夾</text>
+                </g>
+                <g class="pipe-node node-brief">
+                  <circle cx="258" cy="182" r="44"></circle>
+                  <text x="236" y="188">需求</text>
+                </g>
+                <g class="pipe-node node-render">
+                  <circle cx="400" cy="182" r="44"></circle>
+                  <text x="378" y="188">影片</text>
+                </g>
+                <g class="pipe-node node-review">
+                  <circle cx="542" cy="182" r="44"></circle>
+                  <text x="520" y="188">分鏡</text>
+                </g>
+                <g class="pipe-node node-skill">
+                  <circle cx="684" cy="182" r="44"></circle>
+                  <text x="664" y="188">Skill</text>
+                </g>
+              </svg>
+            </div>
+            <div class="pipeline-copy">
+              <span data-pipeline-tag>安全起點</span>
+              <h3 data-pipeline-title>開一個新的資料夾，只授權這裡</h3>
+              <p data-pipeline-desc>Codex 能讀取與操作檔案，所以一開始就要把素材放進清楚的專案資料夾，讓它只在這個範圍工作。</p>
+              <strong data-pipeline-output>產出：可控的工作範圍，避免誤動其他檔案。</strong>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section class="content-section">
+        <div class="section-heading reveal">
+          <p class="eyebrow">Video Results</p>
+          <h2>實際產出的招生影片播放器</h2>
+          <p>第八堂不只是示意，資料夾內真的產出了多個版本。這裡用單一播放器切換橫式、手機直式、活潑版，避免一次載入太多影片。</p>
+        </div>
+
+        <div class="c08-video-lab reveal" data-c08-video-lab>
+          <div class="c08-video-list" aria-label="選擇招生影片版本">
+            <button type="button" class="is-selected" data-c08-video="horizontal">第一版橫式</button>
+            <button type="button" data-c08-video="vertical">手機直式</button>
+            <button type="button" data-c08-video="lively">第二批活潑版</button>
+          </div>
+          <article class="c08-video-player" aria-live="polite">
+            <div class="video-shell" data-c08-video-shell data-mode="horizontal">
+              <video
+                controls
+                playsinline
+                preload="metadata"
+                poster="../assets/course08/previews/preview-main.webp"
+                src="../assets/course08/videos/recruitment-horizontal.mp4"
+                data-c08-video-player
+              ></video>
+            </div>
+            <div class="video-meta">
+              <span data-c08-video-tag>第一批成果</span>
+              <h3 data-c08-video-title>橫式招生影片</h3>
+              <p data-c08-video-desc>用 16:9 橫式輸出，適合投影、網站、一般橫式影片分享。腳本規劃約 42 秒，每段照片搭配招生字幕。</p>
+              <div class="video-meta-grid">
+                <div><strong>規格</strong><p data-c08-video-spec>16:9 橫式</p></div>
+                <div><strong>需要檢查</strong><p data-c08-video-check>字幕、照片順序、音樂音量與招生資訊。</p></div>
+              </div>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section class="content-section surface">
+        <div class="section-heading reveal">
+          <p class="eyebrow">Revision Room</p>
+          <h2>把「感覺怪怪的」翻譯成可修改指令</h2>
+          <p>第一版直式影片不是完美：缺電話、照片太小、字幕不夠大。第八堂示範的是把模糊感受改寫成 AI 能執行的修改任務。</p>
+        </div>
+
+        <div class="revision-lab reveal" data-revision-lab>
+          <div class="revision-buttons" aria-label="選擇影片修改問題">
+            <button type="button" class="is-selected" data-revision-case="phone">最後沒有電話</button>
+            <button type="button" data-revision-case="small">照片太小</button>
+            <button type="button" data-revision-case="subtitle">字幕不夠大</button>
+            <button type="button" data-revision-case="motion">放大效果卡卡</button>
+          </div>
+          <article class="revision-board" aria-live="polite">
+            <div class="phone-preview" data-phone-preview data-mode="phone">
+              <img src="../assets/course08/previews/preview-vertical-phone.webp" alt="手機直式招生影片預覽">
+              <div class="phone-caption" data-revision-caption>請加入電話：05-277-0482 分機 9</div>
+            </div>
+            <div class="revision-copy">
+              <span data-revision-tag>補資訊</span>
+              <h3 data-revision-title>把缺漏說成可執行的修改</h3>
+              <p data-revision-before>感覺怪怪的：最後一幕好像少了可以報名的資訊。</p>
+              <strong data-revision-after>可修改指令：直式影片最後一幕沒有電話資訊，請加入 05-277-0482 分機 9。</strong>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section class="content-section">
+        <div class="section-heading reveal">
+          <p class="eyebrow">Storyboard Review</p>
+          <h2>影片不是終點，還要能交給主管審閱</h2>
+          <p>Codex 讀取影片後，產生分鏡文件：每段時間、截圖、字幕、目前目的、主管修改意見欄位。這讓影片變成可討論的文件。</p>
+        </div>
+
+        <div class="storyboard-lab reveal" data-storyboard-lab>
+          <div class="storyboard-strip" aria-label="選擇分鏡段落">
+            <button type="button" class="is-selected" data-storyboard-scene="opening">0:00 開場</button>
+            <button type="button" data-storyboard-scene="dance">0:05 舞蹈活力</button>
+            <button type="button" data-storyboard-scene="digital">0:25 數位學習</button>
+            <button type="button" data-storyboard-scene="info">0:36 報名資訊</button>
+          </div>
+          <article class="storyboard-card" aria-live="polite">
+            <div class="storyboard-image">
+              <img src="../assets/course08/previews/preview-main.webp" alt="招生影片分鏡預覽" data-storyboard-image>
+            </div>
+            <div class="storyboard-copy">
+              <span data-storyboard-time>0:00-0:05</span>
+              <h3 data-storyboard-title>嘉義市婦女學苑 115 年度招生中</h3>
+              <p data-storyboard-purpose>用課程畫面開場，讓觀眾立刻知道這是婦女學苑招生影片。</p>
+              <div class="review-line">
+                <strong>主管修改意見</strong>
+                <p data-storyboard-review>可確認年度、單位名稱與開場照片是否適合。</p>
+              </div>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section class="content-section surface">
+        <div class="section-heading reveal">
+          <p class="eyebrow">Skill Builder</p>
+          <h2>一次成功不夠，要整理成下一次能用的 Skill</h2>
+          <p>第八堂最有價值的地方，是把影片流程整理成「使用說明書」。下次換一批照片，不必從零開始。</p>
+        </div>
+
+        <div class="skill-lab reveal" data-skill-lab>
+          <div class="skill-switcher" aria-label="選擇 Skill 內容">
+            <button type="button" class="is-selected" data-skill-part="inputs">需要哪些輸入</button>
+            <button type="button" data-skill-part="steps">固定流程</button>
+            <button type="button" data-skill-part="checks">檢查清單</button>
+            <button type="button" data-skill-part="reuse">套用到新照片</button>
+          </div>
+          <article class="skill-console" aria-live="polite">
+            <div class="skill-sheet">
+              <span data-skill-sheet-title>照片招生影片工作說明書</span>
+              <div class="skill-sheet-list" data-skill-list>
+                <span>準備 6-8 張課程照片</span>
+                <span>確認影片用途與招生電話</span>
+                <span>先做橫式，再做手機直式</span>
+              </div>
+            </div>
+            <div class="skill-copy">
+              <span data-skill-tag>素材規格</span>
+              <h3 data-skill-title>先把照片、電話、用途放進資料夾</h3>
+              <p data-skill-desc>Skill 不是魔法，而是一份工作說明書。輸入條件越清楚，下次套用時越不容易跑偏。</p>
+              <strong data-skill-lesson>課堂結論：把成功流程保存下來，才是 AI 工作術的價值。</strong>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section class="content-section">
+        <div class="section-heading reveal">
+          <p class="eyebrow">AI Troubleshooting</p>
+          <h2>遇到安裝錯誤、音樂怪、畫面卡，先問 AI</h2>
+          <p>第八堂保留了原教案「AI 問診」精神：不是沒有問題，而是把問題截圖、描述、追問，讓 AI 協助排除。</p>
+        </div>
+
+        <div class="trouble-grid reveal">
+          <article>
+            <span>安裝卡關</span>
+            <h3>截圖錯誤畫面</h3>
+            <p>把 Windows 安裝 Codex 的錯誤畫面丟給 AI，說明你想安裝什麼、卡在哪一步。</p>
+          </article>
+          <article>
+            <span>影片不順</span>
+            <h3>問原因，不只抱怨</h3>
+            <p>照片放大卡卡，可能和解析度、比例、幀率與縮放方式有關，可請 AI 逐項診斷。</p>
+          </article>
+          <article>
+            <span>長對話</span>
+            <h3>整理精華文件</h3>
+            <p>重要討論結束前，請 AI 整理目標、結論、卡關與下一步，下次再貼回去接續。</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="content-section surface">
+        <div class="section-heading reveal">
+          <p class="eyebrow">Quick Check</p>
+          <h2>課後 1 分鐘小檢查</h2>
+          <p>確認第八堂的核心：Codex 資料夾、影片修改、分鏡文件、Skill、AI 問診與長對話整理。</p>
+        </div>
+        <div class="quiz-panel reveal" data-quiz data-quiz-name="C08">
+          <article class="quiz-card" data-quiz-question>
+            <span>01</span>
+            <h3>第八堂實際主軸是什麼？</h3>
+            <button type="button" data-correct="false">只練習 Canva 賀卡排版</button>
+            <button type="button" data-correct="true">用 Codex 讀取照片資料夾並製作招生影片</button>
+            <button type="button" data-correct="false">只介紹醫療問診 AI</button>
+            <p class="quiz-feedback"></p>
+          </article>
+          <article class="quiz-card" data-quiz-question>
+            <span>02</span>
+            <h3>為什麼新增 Codex 專案時要指定資料夾？</h3>
+            <button type="button" data-correct="true">限制 AI 工作範圍，避免誤動其他檔案</button>
+            <button type="button" data-correct="false">因為 Codex 只能做一張圖片</button>
+            <button type="button" data-correct="false">指定資料夾後就不用檢查成果</button>
+            <p class="quiz-feedback"></p>
+          </article>
+          <article class="quiz-card" data-quiz-question>
+            <span>03</span>
+            <h3>直式影片覺得照片太小時，較好的修改方式是什麼？</h3>
+            <button type="button" data-correct="true">說明可以稍微裁切邊緣，並要求照片與字幕加大</button>
+            <button type="button" data-correct="false">只說「怪怪的」就好</button>
+            <button type="button" data-correct="false">刪掉所有照片</button>
+            <p class="quiz-feedback"></p>
+          </article>
+          <article class="quiz-card" data-quiz-question>
+            <span>04</span>
+            <h3>分鏡文件的用途是什麼？</h3>
+            <button type="button" data-correct="false">讓影片不能再修改</button>
+            <button type="button" data-correct="true">把影片拆成可審閱的時間、畫面、字幕與修改意見</button>
+            <button type="button" data-correct="false">取代所有主管審閱</button>
+            <p class="quiz-feedback"></p>
+          </article>
+          <article class="quiz-card" data-quiz-question>
+            <span>05</span>
+            <h3>為什麼要把成功流程整理成 Skill？</h3>
+            <button type="button" data-correct="true">下次換一批照片時，可以照同一套流程快速重做</button>
+            <button type="button" data-correct="false">讓 AI 永遠不會犯錯</button>
+            <button type="button" data-correct="false">讓所有影片都不能修改</button>
+            <p class="quiz-feedback"></p>
+          </article>
+          <div class="quiz-result" aria-live="polite">
+            <strong>完成 0 / 5 題</strong>
+            <small>答完五題後，這裡會顯示你的 C08 小檢查結果。</small>
+          </div>
+        </div>
+      </section>
+
+      <section class="content-section split next-lesson">
+        <div class="section-heading reveal">
+          <p class="eyebrow">Next</p>
+          <h2>與第九堂的銜接</h2>
+          <p>
+            第八堂已經做出可展示的影片成果；第九堂適合把每位學員的個人專案收斂成可說明、可檢查、可展示的小成果。
+          </p>
+        </div>
+        <a class="next-card reveal" href="c09.html">
+          <span>C09</span>
+          <strong>AI 急診與安全控制中心</strong>
+          <p>把真實工作卡關做成流程問診，補上 OCR、權限、本地工具與成果發表準備。</p>
+        </a>
+      </section>
+    </main>
+
+    <nav class="mobile-bottom-nav" aria-label="手機導覽">
+      <a href="../index.html" aria-label="首頁">
+        <svg><use href="#icon-home"></use></svg>
+        <span>首頁</span>
+      </a>
+      <a href="../index.html#journey" aria-label="課程">
+        <svg><use href="#icon-course"></use></svg>
+        <span>課程</span>
+      </a>
+      <a href="../index.html#outcomes" aria-label="成果">
+        <svg><use href="#icon-gallery"></use></svg>
+        <span>成果</span>
+      </a>
+      <a href="../index.html#message-wall" aria-label="留言">
+        <svg><use href="#icon-message"></use></svg>
+        <span>留言</span>
+      </a>
+      <a href="../index.html#about" aria-label="關於">
+        <svg><use href="#icon-info"></use></svg>
+        <span>關於</span>
+      </a>
+    </nav>
+
+    <script src="../assets/app.js"></script>
+  </body>
+</html>

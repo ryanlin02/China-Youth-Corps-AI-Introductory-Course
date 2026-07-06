@@ -1,0 +1,371 @@
+<!doctype html>
+<html lang="zh-Hant">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>C07 第七堂課 | AI 入門應用班成果展</title>
+    <meta
+      name="description"
+      content="第七堂課實際內容：Excel/PowerPoint ChatGPT 增益集、剪映 Seedance 2.0 影片生成、Markdown、Codex 小工具、字幕與工作流程拆解。"
+    >
+    <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="../assets/styles.css">
+  </head>
+  <body class="lesson-page">
+    <svg aria-hidden="true" class="icon-sprite">
+      <symbol id="icon-home" viewBox="0 0 24 24">
+        <path d="M3 10.8 12 3l9 7.8v9.2a1 1 0 0 1-1 1h-5.2v-6.2H9.2V21H4a1 1 0 0 1-1-1z"/>
+      </symbol>
+      <symbol id="icon-course" viewBox="0 0 24 24">
+        <path d="M5 4.8h10.5a3.5 3.5 0 0 1 3.5 3.5V20H8.5A3.5 3.5 0 0 1 5 16.5z"/>
+        <path d="M8.5 4.8A3.5 3.5 0 0 0 5 8.3v8.2A3.5 3.5 0 0 1 8.5 13H19"/>
+      </symbol>
+      <symbol id="icon-gallery" viewBox="0 0 24 24">
+        <rect x="4" y="5" width="16" height="14" rx="1"/>
+        <path d="m7 16 3.2-3.4 2.4 2.3 2.8-3.8L19 16"/>
+        <circle cx="9" cy="9" r="1.2"/>
+      </symbol>
+      <symbol id="icon-message" viewBox="0 0 24 24">
+        <path d="M5 5h14v10H9l-4 4z"/>
+        <path d="M8 9h8M8 12h5"/>
+      </symbol>
+      <symbol id="icon-info" viewBox="0 0 24 24">
+        <circle cx="12" cy="12" r="8"/>
+        <path d="M12 10v6M12 7.5h.01"/>
+      </symbol>
+      <symbol id="icon-arrow" viewBox="0 0 24 24">
+        <path d="M19 12H5M11 6l-6 6 6 6"/>
+      </symbol>
+    </svg>
+
+    <header class="site-header">
+      <a class="brand" href="../index.html" aria-label="回到成果展首頁">
+        <span class="brand-mark">AI</span>
+        <span>
+          <strong>婦女學苑 AI 成果展</strong>
+          <small>C07 第七堂課</small>
+        </span>
+      </a>
+      <nav class="desktop-nav" aria-label="主要導覽">
+        <a href="../index.html#journey">十堂課</a>
+        <a href="../index.html#outcomes">成果</a>
+        <a href="../index.html#map">學習地圖</a>
+        <a href="../index.html#message-wall">留言</a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="lesson-hero c07-hero">
+        <div class="lesson-hero-copy reveal">
+          <a class="back-link" href="../index.html#journey">
+            <svg><use href="#icon-arrow"></use></svg>
+            回到十堂課旅程
+          </a>
+          <p class="eyebrow">C07 | 2026.06.16</p>
+          <h1>AI 工作流實驗場：把真實需求拆成可操作的工具流程</h1>
+          <p>
+            第七堂原本規劃 Canva 賀卡與海報，但實際課堂完全轉向學員需求：Excel 增益集、剪映 Seedance 2.0、Markdown、Codex 小工具、字幕流程與「AI 輔助專業」的判斷。
+          </p>
+        </div>
+        <figure class="c07-hero-lab reveal" aria-label="第七堂工作流實驗場示意">
+          <svg viewBox="0 0 720 480" role="img" aria-labelledby="c07-hero-title c07-hero-desc">
+            <title id="c07-hero-title">第七堂工作流實驗場</title>
+            <desc id="c07-hero-desc">Excel、影片生成與 Codex 三個實作現場匯入同一條工作流程。</desc>
+            <rect class="lab-shell" x="24" y="28" width="672" height="408" rx="24"></rect>
+            <path class="lab-flow-path" d="M96 342 C178 194 266 372 356 224 S526 110 626 242"></path>
+            <g class="lab-station station-excel">
+              <rect x="78" y="90" width="160" height="116" rx="16"></rect>
+              <text x="112" y="134">Excel</text>
+              <text x="104" y="166">ChatGPT</text>
+              <path d="M112 184 H202"></path>
+            </g>
+            <g class="lab-station station-video">
+              <rect x="288" y="230" width="160" height="116" rx="16"></rect>
+              <text x="330" y="274">剪映</text>
+              <text x="310" y="306">Seedance</text>
+              <polygon points="400,285 374,270 374,300"></polygon>
+            </g>
+            <g class="lab-station station-code">
+              <rect x="500" y="82" width="160" height="116" rx="16"></rect>
+              <text x="548" y="126">Codex</text>
+              <text x="526" y="158">小工具</text>
+              <circle cx="620" cy="170" r="12"></circle>
+            </g>
+            <g class="lab-chip chip-md">
+              <rect x="88" y="300" width="126" height="44" rx="10"></rect>
+              <text x="126" y="329">.md</text>
+            </g>
+            <g class="lab-chip chip-srt">
+              <rect x="298" y="96" width="126" height="44" rx="10"></rect>
+              <text x="336" y="125">SRT</text>
+            </g>
+            <g class="lab-chip chip-safe">
+              <rect x="500" y="300" width="126" height="44" rx="10"></rect>
+              <text x="530" y="329">權限</text>
+            </g>
+          </svg>
+        </figure>
+      </section>
+
+      <section class="content-section lesson-content">
+        <div class="lesson-takeaway reveal">
+          <span class="lesson-number">帶走一句話</span>
+          <h2>AI 給你的常常是 80 分成果；真正有用的是你能不能看懂、修正、接進自己的工作流程。</h2>
+        </div>
+
+        <div class="c07-reality-grid reveal">
+          <article>
+            <span>原訂教案</span>
+            <h2>Canva 賀卡、海報、Logo</h2>
+            <p>課前通知與教案都安排視覺創作，但當日完全沒有正式進行。</p>
+          </article>
+          <article>
+            <span>實際現場</span>
+            <h2>Excel、影片、Codex、字幕</h2>
+            <p>從學員真實提問出發，示範增益集、AI 成片、首尾幀、SRT 與小工具。</p>
+          </article>
+          <article>
+            <span>課堂結論</span>
+            <h2>工具不是主角，流程才是</h2>
+            <p>同一個 AI 功能，對不同專業和不同需求，可能很有用，也可能只是多繞路。</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="content-section surface">
+        <div class="section-heading reveal">
+          <p class="eyebrow">Excel Add-in Lab</p>
+          <h2>Excel 內建 ChatGPT：從上傳檔案到直接寫公式</h2>
+          <p>課堂用隨機記帳 Excel 示範：舊方法是把檔案丟給 AI 問問題；新方法是讓 Excel 裡的增益集直接讀表、寫公式、自己驗證。</p>
+        </div>
+
+        <div class="excel-lab reveal" data-excel-lab>
+          <div class="excel-questions" aria-label="選擇 Excel 增益集任務">
+            <button type="button" class="is-selected" data-excel-task="top">哪個類別支出最多？</button>
+            <button type="button" data-excel-task="formula">在 K2 顯示最高支出</button>
+            <button type="button" data-excel-task="addin">找不到增益集按鈕</button>
+          </div>
+          <article class="excel-workbench" aria-live="polite">
+            <div class="sheet-sim">
+              <div class="sheet-toolbar">
+                <span>交易明細.xlsx</span>
+                <strong>ChatGPT Add-in</strong>
+              </div>
+              <div class="sheet-grid">
+                <span>類別</span><span>收入</span><span>支出</span><span>K2</span>
+                <span>餐飲</span><span>0</span><span>18,240</span><span data-excel-cell>=MAX(H:H)</span>
+                <span>住宿</span><span>0</span><span>86,400</span><span></span>
+                <span>投資</span><span>0</span><span>128,500</span><span></span>
+                <span>旅遊</span><span>0</span><span>42,800</span><span></span>
+              </div>
+            </div>
+            <div class="addin-panel">
+              <span data-excel-tag>現場示範</span>
+              <h3 data-excel-title>AI 找出投資支出最高</h3>
+              <p data-excel-desc>先分析類別彙總，再指出投資 128,500 為最高，其次是住宿。這是「讀資料」層級。</p>
+              <div class="formula-steps" data-excel-steps>
+                <i></i><i></i><i></i>
+              </div>
+              <strong data-excel-lesson>課堂提醒：增益集會看見整份 Excel，真實資料要先判斷能不能給它讀。</strong>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section class="content-section">
+        <div class="section-heading reveal">
+          <p class="eyebrow">Seedance Studio</p>
+          <h2>把活動照片推進影片生成工廠</h2>
+          <p>第七堂的影片段落來自學員需求：想把活動照片變成影片。這裡用課堂照片模擬剪映/即夢的圖轉影片、首尾幀、AI 成片與字幕修正。</p>
+        </div>
+
+        <div class="video-factory reveal" data-video-factory>
+          <div class="video-mode-list" aria-label="選擇影片生成模式">
+            <button type="button" class="is-selected" data-video-mode="image">圖轉影片</button>
+            <button type="button" data-video-mode="frame">首尾幀串接</button>
+            <button type="button" data-video-mode="movie">AI 成片</button>
+            <button type="button" data-video-mode="srt">SRT 字幕修正</button>
+          </div>
+          <article class="video-console" aria-live="polite">
+            <div class="video-preview">
+              <div class="preview-stage" data-video-stage>
+                <img src="../assets/course07/frame-01.webp" alt="課堂示範用活動照片" data-video-image>
+                <div class="motion-path"></div>
+                <span data-video-badge>4 秒動態</span>
+              </div>
+              <div class="frame-strip">
+                <img src="../assets/course07/frame-01.webp" alt="活動照片縮圖 1">
+                <img src="../assets/course07/frame-02.webp" alt="活動照片縮圖 2">
+                <img src="../assets/course07/frame-03.webp" alt="活動照片縮圖 3">
+                <img src="../assets/course07/frame-04.webp" alt="活動照片縮圖 4">
+              </div>
+            </div>
+            <div class="video-plan">
+              <span data-video-tag>圖轉影片</span>
+              <h3 data-video-title>讓靜態照片動起來</h3>
+              <p data-video-desc>給一張活動照片，要求在不破壞畫面元素的前提下，讓人物或鏡頭有自然動態。</p>
+              <div class="video-cost">
+                <strong data-video-cost>約 4 秒，需扣積分</strong>
+                <small data-video-note>免費版或不同平台可能有浮水印、秒數或額度限制。</small>
+              </div>
+              <strong data-video-lesson>課堂結論：生影片很吃額度，生成前要先想清楚用途、秒數與畫面。</strong>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section class="content-section surface">
+        <div class="section-heading reveal">
+          <p class="eyebrow">Workflow Splitter</p>
+          <h2>工作流程拆解器：AI 做哪段？人要懂哪段？</h2>
+          <p>第七堂反覆強調：AI 不會讓零基礎瞬間變專家。它可以省時間，但最後那一步，仍要靠人看懂、判斷、修正。</p>
+        </div>
+
+        <div class="splitter-lab reveal" data-splitter-lab>
+          <div class="splitter-tabs" aria-label="選擇工作流程案例">
+            <button type="button" class="is-selected" data-splitter-case="paper">論文一章一章寫</button>
+            <button type="button" data-splitter-case="loan">貸款試算工具</button>
+            <button type="button" data-splitter-case="subtitles">一小時字幕</button>
+            <button type="button" data-splitter-case="resize">批次改照片尺寸</button>
+          </div>
+          <article class="splitter-board" aria-live="polite">
+            <div class="splitter-rail">
+              <div class="split-step is-ai"><span>AI</span><strong data-split-ai>整理可信資料與大綱</strong></div>
+              <div class="split-step is-human"><span>人</span><strong data-split-human>判斷資料能不能用</strong></div>
+              <div class="split-step is-output"><span>成果</span><strong data-split-output>逐章產出，不一次丟十萬字</strong></div>
+            </div>
+            <div class="splitter-copy">
+              <span data-split-tag>大工作拆小段</span>
+              <h3 data-split-title>論文不是一句話生完</h3>
+              <p data-split-desc>先選資料來源、做大綱，再一章一章生成。若第二章偏掉，後面八萬字可能全部白寫。</p>
+              <strong data-split-lesson>課堂結論：高完成度工作要分段驗收，不能期待一次生成就交出去。</strong>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section class="content-section">
+        <div class="section-heading reveal">
+          <p class="eyebrow">Codex Workshop</p>
+          <h2>小工具規格遊戲：把「改成 300×600」說清楚</h2>
+          <p>Codex 可以幫你寫小程式，但「把照片改成 300×600」有很多種做法。這裡讓你選規格，看看結果會變成哪一種。</p>
+        </div>
+
+        <div class="codex-tool-lab reveal" data-codex-tool>
+          <div class="codex-specs" aria-label="選擇圖片處理規格">
+            <button type="button" class="is-selected" data-codex-spec="fit">等比縮放留白</button>
+            <button type="button" data-codex-spec="crop">中央裁切</button>
+            <button type="button" data-codex-spec="stretch">硬壓變形</button>
+          </div>
+          <article class="codex-tool-stage" aria-live="polite">
+            <div class="resize-demo" data-resize-mode="fit">
+              <div class="source-photo"><img src="../assets/course07/frame-03.webp" alt="活動團體照片示意"></div>
+              <div class="resize-arrow">→</div>
+              <div class="target-frame"><img src="../assets/course07/frame-03.webp" alt="被轉成指定比例的照片示意"></div>
+            </div>
+            <div class="codex-tool-copy">
+              <span data-codex-tag>建議規格</span>
+              <h3 data-codex-title>等比縮放，空白補底色</h3>
+              <p data-codex-desc>畫面不變形，也不裁掉人物，但可能上下或左右留白。適合文件報告裡需要完整保留照片內容。</p>
+              <strong data-codex-lesson>課堂提醒：把需求講清楚，AI 才不會像工讀生一樣照字面做錯。</strong>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section class="content-section surface">
+        <div class="section-heading reveal">
+          <p class="eyebrow">Quick Check</p>
+          <h2>課後 1 分鐘小檢查</h2>
+          <p>確認第七堂的核心：增益集、影片生成、Markdown、流程拆解、Codex 權限與小工具規格。</p>
+        </div>
+        <div class="quiz-panel reveal" data-quiz data-quiz-name="C07">
+          <article class="quiz-card" data-quiz-question>
+            <span>01</span>
+            <h3>第七堂實際主要內容和原教案最大的差異是什麼？</h3>
+            <button type="button" data-correct="false">完整照教案做 Canva 賀卡與 Logo</button>
+            <button type="button" data-correct="true">轉向學員真實需求，示範 Excel、影片生成與 Codex</button>
+            <button type="button" data-correct="false">只進行期末成果發表</button>
+            <p class="quiz-feedback"></p>
+          </article>
+          <article class="quiz-card" data-quiz-question>
+            <span>02</span>
+            <h3>Excel ChatGPT 增益集最重要的隱私提醒是什麼？</h3>
+            <button type="button" data-correct="true">它可能讀到整份 Excel，要先評估資料能不能給它看</button>
+            <button type="button" data-correct="false">增益集完全不會讀資料</button>
+            <button type="button" data-correct="false">只要是記帳檔就一定可以上傳</button>
+            <p class="quiz-feedback"></p>
+          </article>
+          <article class="quiz-card" data-quiz-question>
+            <span>03</span>
+            <h3>剪映/Seedance 的「首尾幀」概念適合用來做什麼？</h3>
+            <button type="button" data-correct="true">用第一張和最後一張控制一段影片，再串接成更長的片段</button>
+            <button type="button" data-correct="false">把影片直接轉成 Excel</button>
+            <button type="button" data-correct="false">保證字幕永遠不會錯</button>
+            <p class="quiz-feedback"></p>
+          </article>
+          <article class="quiz-card" data-quiz-question>
+            <span>04</span>
+            <h3>為什麼課堂再次提到 Markdown `.md`？</h3>
+            <button type="button" data-correct="false">因為 AI 只能讀 Markdown</button>
+            <button type="button" data-correct="true">它是純文字、有結構、檔案小，餵給 AI 較省 Token</button>
+            <button type="button" data-correct="false">因為它比影片更好看</button>
+            <p class="quiz-feedback"></p>
+          </article>
+          <article class="quiz-card" data-quiz-question>
+            <span>05</span>
+            <h3>請 Codex 寫「批次改照片尺寸」小工具時，最重要的是什麼？</h3>
+            <button type="button" data-correct="true">說清楚縮放、裁切、留白、變形等規格，並限制權限範圍</button>
+            <button type="button" data-correct="false">只說「幫我改成 300×600」就一定會完美</button>
+            <button type="button" data-correct="false">一開始就給整台電腦完整存取權</button>
+            <p class="quiz-feedback"></p>
+          </article>
+          <div class="quiz-result" aria-live="polite">
+            <strong>完成 0 / 5 題</strong>
+            <small>答完五題後，這裡會顯示你的 C07 小檢查結果。</small>
+          </div>
+        </div>
+      </section>
+
+      <section class="content-section split next-lesson">
+        <div class="section-heading reveal">
+          <p class="eyebrow">Next</p>
+          <h2>與第八堂的銜接</h2>
+          <p>
+            第七堂把工具接進真實流程；第八堂會把照片資料夾、影片腳本、分鏡文件與修改指令串成一座 Codex 製片廠。
+          </p>
+        </div>
+        <a class="next-card reveal" href="c08.html">
+          <span>C08</span>
+          <strong>Codex 製片廠</strong>
+          <p>把照片、腳本、橫式與直式影片、分鏡審閱和 Skill 流程做成可展示成果。</p>
+        </a>
+      </section>
+    </main>
+
+    <nav class="mobile-bottom-nav" aria-label="手機導覽">
+      <a href="../index.html" aria-label="首頁">
+        <svg><use href="#icon-home"></use></svg>
+        <span>首頁</span>
+      </a>
+      <a href="../index.html#journey" aria-label="課程">
+        <svg><use href="#icon-course"></use></svg>
+        <span>課程</span>
+      </a>
+      <a href="../index.html#outcomes" aria-label="成果">
+        <svg><use href="#icon-gallery"></use></svg>
+        <span>成果</span>
+      </a>
+      <a href="../index.html#message-wall" aria-label="留言">
+        <svg><use href="#icon-message"></use></svg>
+        <span>留言</span>
+      </a>
+      <a href="../index.html#about" aria-label="關於">
+        <svg><use href="#icon-info"></use></svg>
+        <span>關於</span>
+      </a>
+    </nav>
+
+    <script src="../assets/app.js"></script>
+  </body>
+</html>

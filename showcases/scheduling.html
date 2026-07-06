@@ -1,0 +1,298 @@
+<!doctype html>
+<html lang="zh-Hant">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>排班不只靠直覺 | 婦女學苑 AI 成果展</title>
+    <meta
+      name="description"
+      content="第四堂課成果展示：從口述排班規則、AI 追問缺漏、人工補充與檢查，到做出可操作的智慧排班網頁系統。"
+    >
+    <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="../assets/styles.css">
+  </head>
+  <body class="showcase-page scheduling-showcase-page">
+    <svg aria-hidden="true" class="icon-sprite">
+      <symbol id="icon-home" viewBox="0 0 24 24">
+        <path d="M3 10.8 12 3l9 7.8v9.2a1 1 0 0 1-1 1h-5.2v-6.2H9.2V21H4a1 1 0 0 1-1-1z"/>
+      </symbol>
+      <symbol id="icon-course" viewBox="0 0 24 24">
+        <path d="M5 4.8h10.5a3.5 3.5 0 0 1 3.5 3.5V20H8.5A3.5 3.5 0 0 1 5 16.5z"/>
+        <path d="M8.5 4.8A3.5 3.5 0 0 0 5 8.3v8.2A3.5 3.5 0 0 1 8.5 13H19"/>
+      </symbol>
+      <symbol id="icon-gallery" viewBox="0 0 24 24">
+        <rect x="4" y="5" width="16" height="14" rx="1"/>
+        <path d="m7 16 3.2-3.4 2.4 2.3 2.8-3.8L19 16"/>
+        <circle cx="9" cy="9" r="1.2"/>
+      </symbol>
+      <symbol id="icon-message" viewBox="0 0 24 24">
+        <path d="M5 5h14v10H9l-4 4z"/>
+        <path d="M8 9h8M8 12h5"/>
+      </symbol>
+      <symbol id="icon-shield" viewBox="0 0 24 24">
+        <path d="M12 3 19 6v5.2c0 4.1-2.8 7.7-7 9.8-4.2-2.1-7-5.7-7-9.8V6z"/>
+        <path d="m8.5 12 2.2 2.2 4.8-5"/>
+      </symbol>
+      <symbol id="icon-arrow" viewBox="0 0 24 24">
+        <path d="M19 12H5M11 6l-6 6 6 6"/>
+      </symbol>
+    </svg>
+
+    <header class="site-header">
+      <a class="brand" href="../index.html" aria-label="回到成果展首頁">
+        <span class="brand-mark">AI</span>
+        <span>
+          <strong>婦女學苑 AI 成果展</strong>
+          <small>C04 成果展示</small>
+        </span>
+      </a>
+      <nav class="desktop-nav" aria-label="主要導覽">
+        <a href="../index.html#journey">十堂課</a>
+        <a href="../index.html#outcomes">成果</a>
+        <a href="../index.html#map">學習地圖</a>
+        <a href="../index.html#message-wall">留言</a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="result-hero">
+        <div class="result-hero-copy reveal">
+          <a class="back-link" href="../index.html#outcomes">
+            <svg><use href="#icon-arrow"></use></svg>
+            回到成果展示區
+          </a>
+          <p class="eyebrow">C04 Result | Smart Scheduling</p>
+          <h1>排班不只靠直覺：從口述規則到可檢查班表系統</h1>
+          <p>
+            第四堂課最精彩的地方，是學員帶來真實排班問題後，課程現場把「很多條口頭規則」
+            轉成 AI 可以追問、可以整理、也能讓人檢查的流程，最後做成一個可操作的智慧排班網頁。
+          </p>
+          <div class="result-hero-actions">
+            <a class="btn primary" href="#tool">
+              <svg><use href="#icon-course"></use></svg>
+              操作實際工具
+            </a>
+            <a class="btn secondary" href="../courses/c04.html">
+              <svg><use href="#icon-message"></use></svg>
+              回看第四堂課
+            </a>
+          </div>
+        </div>
+
+        <figure class="schedule-hero-visual reveal" aria-label="排班成果製作流程動畫">
+          <svg viewBox="0 0 760 480" role="img" aria-labelledby="schedule-hero-title">
+            <title id="schedule-hero-title">口述規則經由 AI 追問後變成可檢查班表系統</title>
+            <rect class="schedule-frame" x="36" y="38" width="688" height="404" rx="24"/>
+            <g class="schedule-wave">
+              <path d="M96 126c28-38 56 38 84 0s56 38 84 0 56 38 84 0 56 38 84 0 56 38 84 0 56 38 84 0"/>
+            </g>
+            <g class="schedule-node node-voice">
+              <rect x="76" y="214" width="136" height="76" rx="16"/>
+              <text x="144" y="248">口述規則</text>
+              <text x="144" y="272">語音整理</text>
+            </g>
+            <g class="schedule-node node-ai">
+              <rect x="272" y="194" width="154" height="116" rx="18"/>
+              <text x="349" y="236">AI 先問</text>
+              <text x="349" y="264">缺哪些規則？</text>
+            </g>
+            <g class="schedule-node node-table">
+              <rect x="490" y="202" width="176" height="96" rx="18"/>
+              <text x="578" y="238">班表系統</text>
+              <text x="578" y="266">檢查與匯出</text>
+            </g>
+            <path class="schedule-path" d="M212 252C244 242 250 220 272 230M426 252c28 0 42-18 64-10"/>
+            <g class="schedule-checks">
+              <rect x="118" y="346" width="136" height="42" rx="10"/>
+              <rect x="312" y="346" width="136" height="42" rx="10"/>
+              <rect x="506" y="346" width="136" height="42" rx="10"/>
+              <text x="186" y="373">11 小時班距</text>
+              <text x="380" y="373">六休一檢查</text>
+              <text x="574" y="373">CSV 匯出</text>
+            </g>
+          </svg>
+        </figure>
+      </section>
+
+      <section class="content-section">
+        <div class="section-heading reveal">
+          <p class="eyebrow">Display Strategy</p>
+          <h2>這個成果適合怎麼展示？</h2>
+          <p>我採用「專屬介紹頁加上實際工具」：先說清楚學習歷程，再讓訪客操作工具。只放工具會少了課程脈絡，只寫說明又看不到成果真的能動。</p>
+        </div>
+
+        <div class="result-strategy-grid">
+          <article class="result-strategy-card reveal">
+            <span>01</span>
+            <h3>看製作過程</h3>
+            <p>排班成果不是 AI 一次吐答案，而是從口述規則、AI 追問、人工補充到再次檢查。</p>
+          </article>
+          <article class="result-strategy-card reveal">
+            <span>02</span>
+            <h3>看解題邏輯</h3>
+            <p>把班距、連上天數、請假情境、週末支援等規則拆成可檢查條件，才不會只靠感覺排。</p>
+          </article>
+          <article class="result-strategy-card reveal">
+            <span>03</span>
+            <h3>看實際成果</h3>
+            <p>頁面下方嵌入課堂中產出的網頁系統，可切換情境、查看統計與匯出 CSV。</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="content-section surface">
+        <div class="section-heading reveal">
+          <p class="eyebrow">Process Lab</p>
+          <h2>從一段口述，到一套排班小助手</h2>
+          <p>點選不同階段，看看課堂實際做了什麼、遇到什麼問題，以及最後得到什麼結果。</p>
+        </div>
+
+        <div class="schedule-story-lab reveal" data-schedule-showcase>
+          <div class="schedule-story-buttons" aria-label="排班成果製作階段">
+            <button class="is-active" type="button" data-schedule-step="voice">口述規則</button>
+            <button type="button" data-schedule-step="questions">AI 追問</button>
+            <button type="button" data-schedule-step="rules">補足規則</button>
+            <button type="button" data-schedule-step="system">做成系統</button>
+            <button type="button" data-schedule-step="check">人工檢查</button>
+          </div>
+          <article class="schedule-story-board">
+            <div class="schedule-story-stage" data-schedule-stage aria-hidden="true">
+              <span class="stage-pill stage-pill-a">語音</span>
+              <span class="stage-pill stage-pill-b">AI</span>
+              <span class="stage-pill stage-pill-c">班表</span>
+              <div class="stage-sheet">
+                <span></span><span></span><span></span><span></span><span></span><span></span>
+              </div>
+            </div>
+            <div class="schedule-story-copy">
+              <p class="tag" data-schedule-kicker>第一步</p>
+              <h3 data-schedule-title>先把規則用說的倒出來</h3>
+              <p data-schedule-body>排班規則太多，直接打字很慢。課堂先把班別、同仁限制、請假需求和排班習慣用語音說出來，再請 AI 整理成條列規則。</p>
+              <div class="schedule-story-result" data-schedule-result>得到：一份可讀的排班規則草稿，但還不能直接排班。</div>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section class="content-section">
+        <div class="section-heading reveal">
+          <p class="eyebrow">Logic Board</p>
+          <h2>這套排班成果真正厲害在哪裡？</h2>
+          <p>它不是幫忙畫漂亮表格而已，而是把規則、例外、檢查與重排情境放進同一個操作畫面。</p>
+        </div>
+
+        <div class="logic-board reveal">
+          <article>
+            <span>規則</span>
+            <h3>先整理班別與限制</h3>
+            <p>包含平日正職、週末服務、兼職工時、特定日期與請假需求。</p>
+          </article>
+          <article>
+            <span>追問</span>
+            <h3>AI 先找缺漏</h3>
+            <p>例如班別時間、週五服務空缺、指定休假是否已經反映在原班表。</p>
+          </article>
+          <article>
+            <span>檢查</span>
+            <h3>把直覺變成條件</h3>
+            <p>系統檢查 11 小時班距、每日工時、連續上班天數與人力分布。</p>
+          </article>
+          <article>
+            <span>重用</span>
+            <h3>整理成排班小助手</h3>
+            <p>用 Gem 保存規則，下次只要補月份和異動，就能延續同一套邏輯。</p>
+          </article>
+        </div>
+      </section>
+
+      <section id="tool" class="content-section surface">
+        <div class="section-heading reveal">
+          <p class="eyebrow">Actual Tool</p>
+          <h2>第四堂實際產出的排班網頁系統</h2>
+          <p>下方嵌入的是課程中生成的 HTML 工具。它保留原始成果樣貌，可切換六月、七月、請假情境，並檢查規則與匯出 CSV。</p>
+        </div>
+
+        <div class="embedded-tool-shell reveal">
+          <div class="embedded-tool-bar">
+            <span></span><span></span><span></span>
+            <strong>2026 年六七月份智慧排班系統</strong>
+            <a href="../assets/showcases/scheduling/2026.html" target="_blank" rel="noreferrer">開啟完整工具</a>
+          </div>
+          <iframe
+            class="embedded-tool-frame"
+            src="../assets/showcases/scheduling/2026.html"
+            title="第四堂課實際生成的智慧排班系統"
+            loading="lazy"
+          ></iframe>
+        </div>
+        <p class="tool-note reveal">
+          原始工具會載入 Tailwind 與圖示 CDN；若離線觀看，版面可能變簡化，但仍可作為課堂成果保存與展示。
+        </p>
+      </section>
+
+      <section class="content-section">
+        <div class="section-heading reveal">
+          <p class="eyebrow">Problems & Fixes</p>
+          <h2>課堂遇到的問題，以及怎麼修正</h2>
+          <p>這些修正比單純完成班表更重要，因為它們示範了入門學員如何把 AI 從「直接給答案」變成「一起檢查流程」。</p>
+        </div>
+
+        <div class="fix-grid">
+          <article class="fix-card reveal">
+            <span>問題</span>
+            <h3>規則太多，直接輸入容易漏</h3>
+            <p>用語音先講完，再請 AI 整理成條列，降低一開始就卡住的負擔。</p>
+          </article>
+          <article class="fix-card reveal">
+            <span>修正</span>
+            <h3>不要急著請 AI 排班</h3>
+            <p>先問 AI「還缺什麼資訊？」讓它指出班別時間、休假、服務空缺等不明確之處。</p>
+          </article>
+          <article class="fix-card reveal">
+            <span>發現</span>
+            <h3>B 同仁 6/23 不一定要重排</h3>
+            <p>檢查原班表後發現指定日期本來就沒有排班，先確認事實比直接改表更安全。</p>
+          </article>
+          <article class="fix-card reveal">
+            <span>成果</span>
+            <h3>變成可重用的排班流程</h3>
+            <p>把規則整理成 Gem 與網頁工具，下次遇到異動可以沿用邏輯，而不是從零開始。</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="content-section closing-panel">
+        <div class="section-heading reveal">
+          <p class="eyebrow">Presentation Notes</p>
+          <h2>如果學員要上台介紹，可以這樣說</h2>
+        </div>
+        <div class="presentation-script reveal">
+          <p><strong>我這次做的是：</strong>把原本靠經驗記在腦中的排班規則，整理成 AI 可以協助檢查的流程。</p>
+          <p><strong>我使用 AI 的方式是：</strong>先請它問我還缺什麼資料，再補充規則，最後才請它排班與做成網頁工具。</p>
+          <p><strong>我學到的是：</strong>AI 可以很快產出班表，但真正可靠的地方，是人要先提供規則、再檢查結果。</p>
+        </div>
+      </section>
+    </main>
+
+    <nav class="mobile-bottom-nav" aria-label="手機導覽">
+      <a href="../index.html">
+        <svg><use href="#icon-home"></use></svg>
+        首頁
+      </a>
+      <a href="../index.html#outcomes" class="is-active">
+        <svg><use href="#icon-gallery"></use></svg>
+        成果
+      </a>
+      <a href="../courses/c04.html">
+        <svg><use href="#icon-course"></use></svg>
+        C04
+      </a>
+      <a href="#tool">
+        <svg><use href="#icon-shield"></use></svg>
+        工具
+      </a>
+    </nav>
+
+    <script src="../assets/app.js"></script>
+  </body>
+</html>

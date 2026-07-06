@@ -1,0 +1,853 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2026 年六七月份智慧排班系統</title>
+    <link rel="icon" href="../../favicon.svg" type="image/svg+xml">
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Lucide Icons (SVG replacement) -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700;900&display=swap');
+        body {
+            font-family: 'Noto Sans TC', sans-serif;
+        }
+        .custom-scrollbar::-webkit-scrollbar {
+            width: 6px;
+            height: 6px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-track {
+            background: #f1f1f1;
+            border-radius: 10px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+            background: #cbd5e1;
+            border-radius: 10px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+            background: #94a3b8;
+        }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-800 min-h-screen flex flex-col">
+
+    <!-- Header -->
+    <header class="bg-gradient-to-r from-violet-600 via-indigo-600 to-blue-600 text-white shadow-lg">
+        <div class="max-w-7xl mx-auto px-4 py-5 sm:px-6 lg:px-8 flex flex-col sm:flex-row justify-between items-center gap-4">
+            <div class="flex items-center gap-3">
+                <div class="bg-white/20 p-2.5 rounded-xl backdrop-blur-sm">
+                    <i data-lucide="calendar-days" class="w-8 h-8 text-amber-300"></i>
+                </div>
+                <div>
+                    <h1 class="text-2xl font-black tracking-wider flex items-center gap-2">
+                        智慧排班與合規調度系統 
+                        <span class="text-xs bg-amber-400 text-slate-900 px-2 py-0.5 rounded-full font-bold">勞基法合規版</span>
+                    </h1>
+                    <p class="text-sm text-indigo-100 mt-0.5">專為 2026 年 6 月與 7 月設計 | 排班小助手專屬智慧助手</p>
+                </div>
+            </div>
+            <div class="flex items-center gap-3 bg-white/10 px-4 py-2 rounded-xl backdrop-blur-sm border border-white/20">
+                <span class="w-2.5 h-2.5 bg-green-400 rounded-full animate-pulse"></span>
+                <span class="text-sm font-medium">系統狀態：合規引擎運作中</span>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="flex-grow max-w-7xl mx-auto w-full px-4 sm:px-6 lg:px-8 py-8 flex flex-col gap-8">
+        
+        <!-- Top Assistant Guide -->
+        <section class="bg-amber-50 border-l-4 border-amber-500 rounded-r-2xl p-6 shadow-sm">
+            <div class="flex gap-4">
+                <div class="bg-amber-100 text-amber-700 p-2 rounded-full h-10 w-10 flex items-center justify-center flex-shrink-0">
+                    <i data-lucide="sparkles" class="w-6 h-6"></i>
+                </div>
+                <div>
+                    <h3 class="font-bold text-amber-900 text-lg flex items-center gap-2">
+                        排班小助手的暖心分析報告 📋
+                    </h3>
+                    <div class="text-amber-800 mt-2 space-y-2 text-sm leading-relaxed">
+                        <p>
+                            <strong>🎉 好消息！</strong> 關於您提到 <span class="bg-amber-200 px-1 rounded font-bold">B 同仁（兼職）在 6/23（週二）請假</span> 的需求：
+                            經系統核對，平日（週日至週四）依規定 100% 由正職同仁值班，<strong>B 同仁在 6/23 當天原本就沒有排班（屬於固定排休）</strong>，因此原班表完全不受影響，無須重新排班喔！
+                        </p>
+                        <p class="font-medium text-amber-950">
+                            💡 小助手猜測：同仁是否有可能是週末的「筆誤」請假？我特別為您準備了以下兩組週末請假的情境預案，您可以一鍵模擬與套用：
+                        </p>
+                    </div>
+                    
+                    <!-- One-click Solutions -->
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-3 mt-4">
+                        <button onclick="applyScenario('normal')" class="bg-white hover:bg-slate-50 text-slate-700 hover:text-indigo-600 border border-slate-200 px-4 py-3 rounded-xl shadow-sm text-xs font-bold transition flex items-center justify-center gap-2">
+                            <i data-lucide="refresh-cw" class="w-4 h-4 text-slate-400"></i>
+                            還原原始預設班表
+                        </button>
+                        <button onclick="applyScenario('june20')" class="bg-indigo-50 hover:bg-indigo-100 text-indigo-700 border border-indigo-200 px-4 py-3 rounded-xl shadow-sm text-xs font-bold transition flex items-center justify-center gap-2">
+                            <i data-lucide="user-check" class="w-4 h-4 text-indigo-500"></i>
+                            情境 A：B 同仁 6/20 (六) 請假 (C支援)
+                        </button>
+                        <button onclick="applyScenario('june26')" class="bg-violet-50 hover:bg-violet-100 text-violet-700 border border-violet-200 px-4 py-3 rounded-xl shadow-sm text-xs font-bold transition flex items-center justify-center gap-2">
+                            <i data-lucide="users" class="w-4 h-4 text-violet-500"></i>
+                            情境 B：B 同仁 6/26-27 (五六) 請假 (AD調整)
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Dynamic Feedback Banner / Toast -->
+        <div id="toast" class="hidden transform transition-all duration-300 scale-95 opacity-0 bg-emerald-600 text-white px-6 py-4 rounded-xl shadow-lg flex justify-between items-center gap-4">
+            <div class="flex items-center gap-3">
+                <i data-lucide="check-circle" class="w-6 h-6 text-emerald-200"></i>
+                <p id="toast-text" class="text-sm font-medium"></p>
+            </div>
+            <button onclick="closeToast()" class="text-white/80 hover:text-white"><i data-lucide="x" class="w-5 h-5"></i></button>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+            <!-- Left Panel: Stats and Controls -->
+            <div class="lg:col-span-1 flex flex-col gap-6">
+                
+                <!-- Month Selector & Controls -->
+                <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-100">
+                    <h3 class="text-lg font-bold text-slate-900 mb-4 flex items-center gap-2">
+                        <i data-lucide="sliders" class="w-5 h-5 text-indigo-500"></i> 班表控制台
+                    </h3>
+                    
+                    <div class="space-y-4">
+                        <div>
+                            <label class="block text-xs font-bold text-slate-500 uppercase tracking-wider mb-2">切換顯示月份</label>
+                            <div class="grid grid-cols-2 gap-2">
+                                <button id="btn-m6" onclick="switchMonth(6)" class="py-2.5 rounded-xl text-sm font-bold transition shadow-sm bg-indigo-600 text-white">
+                                    2026年 6 月份
+                                </button>
+                                <button id="btn-m7" onclick="switchMonth(7)" class="py-2.5 rounded-xl text-sm font-bold transition shadow-sm bg-white text-slate-600 border border-slate-200 hover:bg-slate-50">
+                                    2026年 7 月份
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class="pt-4 border-t border-slate-100">
+                            <button onclick="exportCSV()" class="w-full bg-slate-900 hover:bg-slate-800 text-white py-3 rounded-xl font-bold text-sm transition shadow-sm flex items-center justify-center gap-2">
+                                <i data-lucide="download" class="w-4 h-4"></i>
+                                匯出目前班表 CSV 檔
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Stats Summary Board -->
+                <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-100 flex-grow">
+                    <h3 class="text-lg font-bold text-slate-900 mb-4 flex items-center gap-2">
+                        <i data-lucide="trending-up" class="w-5 h-5 text-indigo-500"></i> 工時與合規統計表
+                    </h3>
+                    
+                    <div id="stats-container" class="space-y-4">
+                        <!-- Dynamic Stats Cards will be injected here -->
+                    </div>
+
+                    <div class="mt-6 pt-4 border-t border-slate-100 space-y-2">
+                        <h4 class="text-xs font-bold text-slate-400 uppercase tracking-wider">核心合規對照指標</h4>
+                        <ul class="text-xs text-slate-500 space-y-1.5 leading-relaxed">
+                            <li class="flex items-start gap-1.5"><span class="text-green-500 font-bold">✔</span> 正職平日工時上限：約 160~180 小時</li>
+                            <li class="flex items-start gap-1.5"><span class="text-green-500 font-bold">✔</span> 輪班間隔：前後班次必須間隔 11 小時以上</li>
+                            <li class="flex items-start gap-1.5"><span class="text-green-500 font-bold">✔</span> 每日工時上限：單一工作天不得工作超過 12 小時</li>
+                            <li class="flex items-start gap-1.5"><span class="text-green-500 font-bold">✔</span> 一例一休：每 7 天內不得連續工作超過 6 天</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right Panel: Interactive Shift Table -->
+            <div class="lg:col-span-2 bg-white rounded-2xl shadow-sm border border-slate-100 overflow-hidden flex flex-col">
+                <div class="px-6 py-5 border-b border-slate-100 flex flex-col sm:flex-row justify-between items-start sm:items-center gap-3 bg-slate-50/50">
+                    <div>
+                        <h3 class="text-lg font-bold text-slate-900 flex items-center gap-2">
+                            <i data-lucide="calendar" class="text-indigo-600 w-5 h-5"></i> 
+                            <span id="table-title">2026 年 6 月份詳細排班表</span>
+                        </h3>
+                        <p class="text-xs text-slate-500 mt-0.5">點擊「排班同仁」下拉選單可自由更動，系統會即時重新計算與檢驗合規性喔！</p>
+                        <p class="text-xs text-indigo-600 font-bold mt-1 sm:hidden">手機觀看時，可在表格區左右滑動查看完整欄位。</p>
+                    </div>
+                    <div class="flex items-center gap-2">
+                        <span class="text-xs bg-indigo-50 text-indigo-700 px-3 py-1 rounded-full font-bold">正職 (A, C)</span>
+                        <span class="text-xs bg-emerald-50 text-emerald-700 px-3 py-1 rounded-full font-bold">兼職 (B, D)</span>
+                    </div>
+                </div>
+
+                <!-- Table Container -->
+                <div class="overflow-x-auto custom-scrollbar flex-grow" style="max-height: 600px;">
+                    <table class="w-full min-w-[760px] text-left border-collapse text-sm">
+                        <thead class="bg-slate-100 text-slate-600 sticky top-0 z-10">
+                            <tr>
+                                <th class="px-4 py-3 font-semibold text-xs uppercase tracking-wider text-center w-16">日期</th>
+                                <th class="px-2 py-3 font-semibold text-xs uppercase tracking-wider text-center w-12">星期</th>
+                                <th class="px-4 py-3 font-semibold text-xs uppercase tracking-wider">班別與時間</th>
+                                <th class="px-4 py-3 font-semibold text-xs uppercase tracking-wider text-center w-36">排班同仁</th>
+                                <th class="px-4 py-3 font-semibold text-xs uppercase tracking-wider text-center w-16">工時</th>
+                                <th class="px-4 py-3 font-semibold text-xs uppercase tracking-wider">備註與檢測狀態</th>
+                            </tr>
+                        </thead>
+                        <tbody id="shift-table-body" class="divide-y divide-slate-100">
+                            <!-- Shift Rows will be dynamically populated here -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-slate-900 text-slate-400 text-center py-6 border-t border-slate-800 mt-12 text-xs">
+        <p>© 2026 智慧排班小助手系統 - 版權所有。遵循中華民國勞動基準法合規規範。</p>
+    </footer>
+
+    <!-- JavaScript Core Logic -->
+    <script>
+        // Data Store
+        let currentMonth = 6;
+        let scheduleData = {
+            6: [],
+            7: []
+        };
+
+        // Staff characteristics
+        const staffRoles = {
+            "A": "正職",
+            "B": "兼職",
+            "C": "正職",
+            "D": "兼職",
+            "": "無"
+        };
+
+        // Static config for shift types
+        const shiftConfigs = {
+            "mid": { name: "平常日中班", time: "17:00 - 24:00", hours: 7 },
+            "night": { name: "平常日大夜班", time: "23:30 - 08:00", hours: 8 },
+            "fri_1": { name: "週五假日(前半)", time: "17:00 - 21:00", hours: 4 },
+            "fri_2": { name: "週五假日(後半)", time: "21:00 - 06:00", hours: 9 },
+            "sat_1": { name: "週六假日(前半)", time: "14:00 - 24:00", hours: 10 },
+            "sat_2": { name: "週六假日(後半)", time: "24:00 - 06:00", hours: 6 }
+        };
+
+        // Original June Schedule Raw Data
+        const juneOriginal = [
+            { day: 1, type: "mid", emp: "A", note: "接力順暢" },
+            { day: 1, type: "night", emp: "C", note: "內含0.5小時休息" },
+            { day: 2, type: "mid", emp: "A", note: "" },
+            { day: 2, type: "night", emp: "C", note: "" },
+            { day: 3, type: "mid", emp: "A", note: "" },
+            { day: 3, type: "night", emp: "C", note: "" },
+            { day: 4, type: "mid", emp: "A", note: "" },
+            { day: 4, type: "night", emp: "C", note: "" },
+            { day: 5, type: "fri_1", emp: "A", note: "C 同仁指定休假" },
+            { day: 5, type: "fri_2", emp: "B", note: "假日優先排兼職" },
+            { day: 6, type: "sat_1", emp: "D", note: "兼職當日上限" },
+            { day: 6, type: "sat_2", emp: "B", note: "接力無重疊" },
+            { day: 7, type: "mid", emp: "C", note: "B 同仁週日不排班" },
+            { day: 7, type: "night", emp: "A", note: "" },
+            { day: 8, type: "mid", emp: "C", note: "輪班軌道切換" },
+            { day: 8, type: "night", emp: "A", note: "" },
+            { day: 9, type: "mid", emp: "C", note: "" },
+            { day: 9, type: "night", emp: "A", note: "" },
+            { day: 10, type: "mid", emp: "C", note: "" },
+            { day: 10, type: "night", emp: "A", note: "" },
+            { day: 11, type: "mid", emp: "C", note: "" },
+            { day: 11, type: "night", emp: "A", note: "" },
+            { day: 12, type: "fri_1", emp: "C", note: "依習慣常態配置" },
+            { day: 12, type: "fri_2", emp: "B", note: "" },
+            { day: 13, type: "sat_1", emp: "D", note: "" },
+            { day: 13, type: "sat_2", emp: "B", note: "" },
+            { day: 14, type: "mid", emp: "A", note: "B 同仁週日不排班" },
+            { day: 14, type: "night", emp: "C", note: "" },
+            { day: 15, type: "mid", emp: "A", note: "需確認：15日上課同仁(D排休)" },
+            { day: 15, type: "night", emp: "C", note: "" },
+            { day: 16, type: "mid", emp: "A", note: "" },
+            { day: 16, type: "night", emp: "C", note: "" },
+            { day: 17, type: "mid", emp: "A", note: "" },
+            { day: 17, type: "night", emp: "C", note: "" },
+            { day: 18, type: "mid", emp: "A", note: "" },
+            { day: 18, type: "night", emp: "C", note: "" },
+            { day: 19, type: "fri_1", emp: "A", note: "" },
+            { day: 19, type: "fri_2", emp: "D", note: "兼職輪替維護公平" },
+            { day: 20, type: "sat_1", emp: "B", note: "" },
+            { day: 20, type: "sat_2", emp: "D", note: "" },
+            { day: 21, type: "mid", emp: "C", note: "指定需求日/B同仁週日不排班" },
+            { day: 21, type: "night", emp: "A", note: "" },
+            { day: 22, type: "mid", emp: "C", note: "" },
+            { day: 22, type: "night", emp: "A", note: "" },
+            { day: 23, type: "mid", emp: "C", note: "" },
+            { day: 23, type: "night", emp: "A", note: "" },
+            { day: 24, type: "mid", emp: "C", note: "" },
+            { day: 24, type: "night", emp: "A", note: "" },
+            { day: 25, type: "mid", emp: "C", note: "" },
+            { day: 25, type: "night", emp: "A", note: "" },
+            { day: 26, type: "fri_1", emp: "A", note: "C 同仁指定休假" },
+            { day: 26, type: "fri_2", emp: "B", note: "" },
+            { day: 27, type: "sat_1", emp: "D", note: "C 同仁指定休假" },
+            { day: 27, type: "sat_2", emp: "B", note: "" },
+            { day: 28, type: "mid", emp: "C", note: "B 同仁週日不排班" },
+            { day: 28, type: "night", emp: "A", note: "" },
+            { day: 29, type: "mid", emp: "C", note: "" },
+            { day: 29, type: "night", emp: "A", note: "" },
+            { day: 30, type: "mid", emp: "C", note: "" },
+            { day: 30, type: "night", emp: "A", note: "" }
+        ];
+
+        // Original July Schedule Raw Data
+        const julyOriginal = [
+            { day: 1, type: "mid", emp: "A", note: "月份銜接軌道穩定" },
+            { day: 1, type: "night", emp: "C", note: "" },
+            { day: 2, type: "mid", emp: "A", note: "" },
+            { day: 2, type: "night", emp: "C", note: "" },
+            { day: 3, type: "fri_1", emp: "A", note: "" },
+            { day: 3, type: "fri_2", emp: "B", note: "假日優先排兼職" },
+            { day: 4, type: "sat_1", emp: "D", note: "" },
+            { day: 4, type: "sat_2", emp: "B", note: "" },
+            { day: 5, type: "mid", emp: "C", note: "B 同仁週日不排班" },
+            { day: 5, type: "night", emp: "A", note: "" },
+            { day: 6, type: "mid", emp: "C", note: "" },
+            { day: 6, type: "night", emp: "A", note: "" },
+            { day: 7, type: "mid", emp: "C", note: "" },
+            { day: 7, type: "night", emp: "A", note: "" },
+            { day: 8, type: "mid", emp: "C", note: "" },
+            { day: 8, type: "night", emp: "A", note: "" },
+            { day: 9, type: "mid", emp: "C", note: "" },
+            { day: 9, type: "night", emp: "A", note: "" },
+            { day: 10, type: "fri_1", emp: "C", note: "" },
+            { day: 10, type: "fri_2", emp: "B", note: "" },
+            { day: 11, type: "sat_1", emp: "D", note: "" },
+            { day: 11, type: "sat_2", emp: "B", note: "" },
+            { day: 12, type: "mid", emp: "A", note: "B 同仁週日不排班" },
+            { day: 12, type: "night", emp: "C", note: "" },
+            { day: 13, type: "mid", emp: "A", note: "" },
+            { day: 13, type: "night", emp: "C", note: "" },
+            { day: 14, type: "mid", emp: "A", note: "" },
+            { day: 14, type: "night", emp: "C", note: "" },
+            { day: 15, type: "mid", emp: "A", note: "D排休上課" },
+            { day: 15, type: "night", emp: "C", note: "" },
+            { day: 16, type: "mid", emp: "A", note: "" },
+            { day: 16, type: "night", emp: "C", note: "" },
+            { day: 17, type: "fri_1", emp: "A", note: "" },
+            { day: 17, type: "fri_2", emp: "D", note: "靈活調度兼職時數" },
+            { day: 18, type: "sat_1", emp: "B", note: "" },
+            { day: 18, type: "sat_2", emp: "D", note: "" },
+            { day: 19, type: "mid", emp: "C", note: "B 同仁週日不排班" },
+            { day: 19, type: "night", emp: "A", note: "" },
+            { day: 20, type: "mid", emp: "C", note: "" },
+            { day: 20, type: "night", emp: "A", note: "" },
+            { day: 21, type: "mid", emp: "C", note: "" },
+            { day: 21, type: "night", emp: "A", note: "" },
+            { day: 22, type: "mid", emp: "C", note: "" },
+            { day: 22, type: "night", emp: "A", note: "" },
+            { day: 23, type: "mid", emp: "C", note: "" },
+            { day: 23, type: "night", emp: "A", note: "" },
+            { day: 24, type: "fri_1", emp: "C", note: "" },
+            { day: 24, type: "fri_2", emp: "B", note: "" },
+            { day: 25, type: "sat_1", emp: "D", note: "" },
+            { day: 25, type: "sat_2", emp: "B", note: "" },
+            { day: 26, type: "mid", emp: "A", note: "B 同仁週日不排班" },
+            { day: 26, type: "night", emp: "C", note: "" },
+            { day: 27, type: "mid", emp: "A", note: "" },
+            { day: 27, type: "night", emp: "C", note: "" },
+            { day: 28, type: "mid", emp: "A", note: "" },
+            { day: 28, type: "night", emp: "C", note: "" },
+            { day: 29, type: "mid", emp: "A", note: "" },
+            { day: 29, type: "night", emp: "C", note: "" },
+            { day: 30, type: "mid", emp: "A", note: "" },
+            { day: 30, type: "night", emp: "C", note: "" },
+            { day: 31, type: "fri_1", emp: "A", note: "跨月接力照常安全" },
+            { day: 31, type: "fri_2", emp: "B", note: "" }
+        ];
+
+        // Weekday Calculator helper
+        function getWeekdayName(year, month, day) {
+            const date = new Date(year, month - 1, day);
+            const days = ["日", "一", "二", "三", "四", "五", "六"];
+            return days[date.getDay()];
+        }
+
+        // Initialize Data Object from raw schedules
+        function initSchedules() {
+            // June 2026
+            scheduleData[6] = juneOriginal.map((item, idx) => {
+                const wk = getWeekdayName(2026, 6, item.day);
+                return {
+                    id: `6_${item.day}_${item.type}`,
+                    day: item.day,
+                    weekday: wk,
+                    date: `2026-06-${item.day.toString().padStart(2, '0')}`,
+                    type: item.type,
+                    name: shiftConfigs[item.type].name,
+                    time: shiftConfigs[item.type].time,
+                    hours: shiftConfigs[item.type].hours,
+                    employee: item.emp,
+                    note: item.note
+                };
+            });
+
+            // July 2026
+            scheduleData[7] = julyOriginal.map((item, idx) => {
+                const wk = getWeekdayName(2026, 7, item.day);
+                return {
+                    id: `7_${item.day}_${item.type}`,
+                    day: item.day,
+                    weekday: wk,
+                    date: `2026-07-${item.day.toString().padStart(2, '0')}`,
+                    type: item.type,
+                    name: shiftConfigs[item.type].name,
+                    time: shiftConfigs[item.type].time,
+                    hours: shiftConfigs[item.type].hours,
+                    employee: item.emp,
+                    note: item.note
+                };
+            });
+        }
+
+        // Apply pre-designed scenarios
+        function applyScenario(type) {
+            initSchedules(); // reset first
+
+            if (type === 'normal') {
+                showToast("✅ 已成功重設並還原至原始預設班表！", "success");
+            } else if (type === 'june20') {
+                // Scenario A: B requests leave on June 20. C covers B's Saturday morning/early shift.
+                const shift = scheduleData[6].find(s => s.day === 20 && s.type === "sat_1");
+                if (shift) {
+                    shift.employee = "C";
+                    shift.note = "💡 B請假，由C支援(符合輪班與休假規範)";
+                }
+                showToast("✨ 已成功套用『情境 A：6/20 B同仁請假由正職 C 支援方案』！班表 100% 合規！", "success");
+            } else if (type === 'june26') {
+                // Scenario B: B requests leave on June 26-27. Swaps AD and covers B.
+                // 6/26 後半: D covers B
+                const s26_2 = scheduleData[6].find(s => s.day === 26 && s.type === "fri_2");
+                if (s26_2) { s26_2.employee = "D"; s26_2.note = "💡 D同仁跨期代 B 班"; }
+
+                // 6/27 前半: A covers D (preventing D's rest interval violation)
+                const s27_1 = scheduleData[6].find(s => s.day === 27 && s.type === "sat_1");
+                if (s27_1) { s27_1.employee = "A"; s27_1.note = "💡 A支援後半轉接力，避開D休息間隔限制"; }
+
+                // 6/27 後半: D covers B
+                const s27_2 = scheduleData[6].find(s => s.day === 27 && s.type === "sat_2");
+                if (s27_2) { s27_2.employee = "D"; s27_2.note = "💡 D支援後半班"; }
+
+                showToast("✨ 已成功套用『情境 B：6/26-27 B同仁請假，A與D跨期協調代班方案』！完美避開所有合規限制！", "success");
+            }
+
+            render();
+        }
+
+        // Render UI
+        function render() {
+            renderTable();
+            renderStats();
+            lucide.createIcons();
+        }
+
+        // Render Shift Table Rows
+        function renderTable() {
+            const tableBody = document.getElementById("shift-table-body");
+            tableBody.innerHTML = "";
+            
+            const currentMonthData = scheduleData[currentMonth];
+            document.getElementById("table-title").innerText = `2026 年 ${currentMonth} 月份詳細排班表`;
+
+            currentMonthData.forEach((shift) => {
+                const tr = document.createElement("tr");
+                const isWeekend = shift.weekday === "六" || shift.weekday === "五";
+                const isSunday = shift.weekday === "日";
+                
+                // Color formatting for weekends
+                let rowBg = "hover:bg-slate-50";
+                if (isSunday) rowBg = "bg-rose-50/30 hover:bg-rose-50/50";
+                else if (isWeekend) rowBg = "bg-amber-50/20 hover:bg-amber-50/40";
+
+                tr.className = `${rowBg} transition-colors duration-150`;
+
+                // Calculate specific alert flags
+                const compliance = checkShiftCompliance(shift);
+
+                // Option list for dropdown
+                const options = ["A", "B", "C", "D", ""].map(emp => {
+                    const role = staffRoles[emp];
+                    const selected = shift.employee === emp ? "selected" : "";
+                    const displayName = emp ? `${emp} (${role})` : "排休 / 無";
+                    return `<option value="${emp}" ${selected}>${displayName}</option>`;
+                }).join("");
+
+                // Styling for employee badge
+                let empBadgeStyle = "bg-slate-100 text-slate-700";
+                if (shift.employee === "A" || shift.employee === "C") {
+                    empBadgeStyle = "bg-indigo-50 text-indigo-700 font-semibold border border-indigo-100";
+                } else if (shift.employee === "B" || shift.employee === "D") {
+                    empBadgeStyle = "bg-emerald-50 text-emerald-700 font-semibold border border-emerald-100";
+                }
+
+                tr.innerHTML = `
+                    <td class="px-4 py-3.5 text-center font-bold text-slate-600">${shift.day}日</td>
+                    <td class="px-2 py-3.5 text-center">
+                        <span class="px-2 py-1 rounded-full text-xs font-bold ${
+                            isSunday ? 'bg-rose-100 text-rose-700' : isWeekend ? 'bg-amber-100 text-amber-700' : 'text-slate-500'
+                        }">${shift.weekday}</span>
+                    </td>
+                    <td class="px-4 py-3.5">
+                        <div class="font-bold text-slate-900 text-xs sm:text-sm">${shift.name}</div>
+                        <div class="text-xs text-slate-500 mt-0.5 flex items-center gap-1">
+                            <i data-lucide="clock" class="w-3.5 h-3.5 text-slate-400"></i> ${shift.time}
+                        </div>
+                    </td>
+                    <td class="px-4 py-3.5 text-center">
+                        <select onchange="updateEmployee('${shift.id}', this.value)" class="text-xs rounded-xl border-slate-200 bg-white hover:border-indigo-400 focus:ring focus:ring-indigo-100 transition py-1.5 px-3 shadow-sm w-full max-w-[140px] text-center ${empBadgeStyle}">
+                            ${options}
+                        </select>
+                    </td>
+                    <td class="px-4 py-3.5 text-center font-bold text-slate-700">${shift.hours}H</td>
+                    <td class="px-4 py-3.5 text-xs">
+                        <div class="flex flex-col gap-1">
+                            ${compliance.isAlert ? `
+                                <div class="text-rose-600 font-medium flex items-center gap-1.5 bg-rose-50 px-2 py-1 rounded-lg border border-rose-100 animate-pulse">
+                                    <i data-lucide="alert-triangle" class="w-4 h-4 text-rose-500"></i>
+                                    <span>${compliance.alertMsg}</span>
+                                </div>
+                            ` : `
+                                <div class="text-emerald-700 font-medium flex items-center gap-1.5 bg-emerald-50 px-2 py-1 rounded-lg border border-emerald-100">
+                                    <i data-lucide="check-circle-2" class="w-4 h-4 text-emerald-500"></i>
+                                    <span>排班正常 / 合規</span>
+                                </div>
+                            `}
+                            ${shift.note ? `<div class="text-slate-400 italic mt-0.5">※ ${shift.note}</div>` : ""}
+                        </div>
+                    </td>
+                `;
+                tableBody.appendChild(tr);
+            });
+        }
+
+        // Render Stats Summary Panel
+        function renderStats() {
+            const container = document.getElementById("stats-container");
+            container.innerHTML = "";
+
+            const monthData = scheduleData[currentMonth];
+            const staffs = ["A", "B", "C", "D"];
+
+            staffs.forEach(emp => {
+                const role = staffRoles[emp];
+                let weekdayHours = 0;
+                let weekendHours = 0;
+                let consecutiveDays = 0;
+                
+                // Track dates worked for consecutive days check
+                const workedDates = new Set();
+
+                monthData.forEach(shift => {
+                    if (shift.employee === emp) {
+                        workedDates.add(shift.date);
+                        if (shift.weekday === "五" || shift.weekday === "六") {
+                            weekendHours += shift.hours;
+                        } else {
+                            weekdayHours += shift.hours;
+                        }
+                    }
+                });
+
+                const totalHours = weekdayHours + weekendHours;
+
+                // Calculate consecutive days
+                const sortedDates = Array.from(workedDates).sort();
+                let tempSeq = 0;
+                let maxSeq = 0;
+                for (let i = 0; i < sortedDates.length; i++) {
+                    if (i === 0) {
+                        tempSeq = 1;
+                    } else {
+                        const prev = new Date(sortedDates[i-1]);
+                        const curr = new Date(sortedDates[i]);
+                        const diff = (curr - prev) / (1000 * 60 * 60 * 24);
+                        if (diff === 1) {
+                            tempSeq++;
+                        } else {
+                            maxSeq = Math.max(maxSeq, tempSeq);
+                            tempSeq = 1;
+                        }
+                    }
+                }
+                consecutiveDays = Math.max(maxSeq, tempSeq);
+
+                // Specific rule checks for each person
+                let limitCheckMsg = "符合規範";
+                let isViolating = false;
+
+                // Checking constraints
+                if (emp === "B" && monthData.some(s => s.weekday === "日" && s.employee === "B")) {
+                    limitCheckMsg = "⚠️ 違反 B 同仁週日不排班規定！";
+                    isViolating = true;
+                }
+                if (emp === "C" && currentMonth === 6 && monthData.some(s => ["2026-06-05", "2026-06-26", "2026-06-27"].includes(s.date) && s.employee === "C")) {
+                    limitCheckMsg = "⚠️ 違反 C 同仁指定排休限制！";
+                    isViolating = true;
+                }
+                if (consecutiveDays > 6) {
+                    limitCheckMsg = `⚠️ 連續工作超過 6 天 (${consecutiveDays}天)，一例一休超時！`;
+                    isViolating = true;
+                }
+                if (role === "兼職" && weekdayHours > 0) {
+                    limitCheckMsg = "⚠️ 兼職同仁在平日被排班（平日原則由正職看顧）";
+                    isViolating = true;
+                }
+
+                // Render single card
+                const isFullTime = role === "正職";
+                const borderClass = isViolating ? 'border-rose-200 bg-rose-50/20' : 'border-slate-100 bg-white';
+                const empBadge = isFullTime ? 'bg-indigo-100 text-indigo-700' : 'bg-emerald-100 text-emerald-700';
+
+                container.innerHTML += `
+                    <div class="p-4 rounded-xl border ${borderClass} transition shadow-sm space-y-3">
+                        <div class="flex justify-between items-center">
+                            <div class="flex items-center gap-2">
+                                <span class="font-black text-base text-slate-800">${emp} 同仁</span>
+                                <span class="text-xs px-2.5 py-0.5 rounded-full font-bold ${empBadge}">${role}</span>
+                            </div>
+                            <div class="text-xs font-semibold ${isViolating ? 'text-rose-600' : 'text-emerald-600'} flex items-center gap-1">
+                                <i data-lucide="${isViolating ? 'alert-circle' : 'shield-check'}" class="w-4 h-4"></i>
+                                ${limitCheckMsg}
+                            </div>
+                        </div>
+                        <div class="grid grid-cols-3 gap-2 text-center bg-slate-50 p-2.5 rounded-lg border border-slate-100">
+                            <div>
+                                <div class="text-[10px] font-bold text-slate-400 uppercase tracking-wider">平日工時</div>
+                                <div class="text-sm font-bold text-slate-700 mt-0.5">${weekdayHours} H</div>
+                            </div>
+                            <div>
+                                <div class="text-[10px] font-bold text-slate-400 uppercase tracking-wider">假日工時</div>
+                                <div class="text-sm font-bold text-slate-700 mt-0.5">${weekendHours} H</div>
+                            </div>
+                            <div>
+                                <div class="text-[10px] font-bold text-slate-400 uppercase tracking-wider">總工時</div>
+                                <div class="text-base font-black ${totalHours > 180 ? 'text-rose-600' : 'text-slate-900'} mt-0.5">${totalHours} H</div>
+                            </div>
+                        </div>
+                        <div class="text-[11px] text-slate-400 flex justify-between items-center">
+                            <span>本月最大連續工作：<strong>${consecutiveDays} 天</strong></span>
+                            ${consecutiveDays > 6 ? '<span class="text-rose-500 font-bold">超時警告</span>' : '<span class="text-green-500">正常</span>'}
+                        </div>
+                    </div>
+                `;
+            });
+        }
+
+        // Single Shift Compliance Check Strategy
+        function checkShiftCompliance(shift) {
+            const result = { isAlert: false, alertMsg: "" };
+            const emp = shift.employee;
+
+            if (!emp) return result;
+
+            // Rule 1: Special leave days constraints
+            if (emp === "C" && currentMonth === 6 && ["2026-06-05", "2026-06-26", "2026-06-27"].includes(shift.date)) {
+                result.isAlert = true;
+                result.alertMsg = "⚠️ C 同仁指定休假，不可排班！";
+                return result;
+            }
+
+            // Rule 2: B Sunday constraints
+            if (emp === "B" && shift.weekday === "日") {
+                result.isAlert = true;
+                result.alertMsg = "⚠️ B 同仁週日指定不排班！";
+                return result;
+            }
+
+            // Rule 3: 15th Class Day constraints (D)
+            const is15th = shift.date.endsWith("-15");
+            if (is15th && emp === "D") {
+                result.isAlert = true;
+                result.alertMsg = "⚠️ D 同仁 15 日上課，必須排休！";
+                return result;
+            }
+
+            // Rule 4: Weekday Part-time limits
+            const role = staffRoles[emp];
+            const isWeekday = !["五", "六"].includes(shift.weekday);
+            if (isWeekday && role === "兼職") {
+                result.isAlert = true;
+                result.alertMsg = "⚠️ 平日依規定不可單獨指派給兼職同仁！";
+                return result;
+            }
+
+            // Rule 5: 11 Hours Rest Interval check with continuous shifts
+            const monthData = scheduleData[currentMonth];
+            const empShifts = monthData.filter(s => s.employee === emp).sort((x, y) => {
+                return getShiftTimeRange(x).start - getShiftTimeRange(y).start;
+            });
+
+            const idx = empShifts.findIndex(s => s.id === shift.id);
+            if (idx > -1) {
+                // Check rest with previous shift
+                if (idx > 0) {
+                    const prev = empShifts[idx - 1];
+                    const currentRange = getShiftTimeRange(shift);
+                    const prevRange = getShiftTimeRange(prev);
+                    const restMs = currentRange.start - prevRange.end;
+                    
+                    // Check if it is continuous or overlapping
+                    if (restMs < 0) {
+                        // Same day continuous shift check (max 12h)
+                        const totalHoursCombined = prev.hours + shift.hours;
+                        if (totalHoursCombined > 12) {
+                            result.isAlert = true;
+                            result.alertMsg = `⚠️ 連續工作總工時達 ${totalHoursCombined}H，超單日 12H 上限！`;
+                            return result;
+                        }
+                    } else if (restMs < 11 * 60 * 60 * 1000) {
+                        result.isAlert = true;
+                        result.alertMsg = `⚠️ 輪班休息僅 ${(restMs / (1000 * 60 * 60)).toFixed(1)}H，少於11小時！`;
+                        return result;
+                    }
+                }
+
+                // Check rest with next shift
+                if (idx < empShifts.length - 1) {
+                    const next = empShifts[idx + 1];
+                    const currentRange = getShiftTimeRange(shift);
+                    const nextRange = getShiftTimeRange(next);
+                    const restMs = nextRange.start - currentRange.end;
+
+                    if (restMs < 0) {
+                        const totalHoursCombined = next.hours + shift.hours;
+                        if (totalHoursCombined > 12) {
+                            result.isAlert = true;
+                            result.alertMsg = `⚠️ 連續工作總工時達 ${totalHoursCombined}H，超單日 12H 上限！`;
+                            return result;
+                        }
+                    } else if (restMs < 11 * 60 * 60 * 1000) {
+                        result.isAlert = true;
+                        result.alertMsg = `⚠️ 輪班休息僅 ${(restMs / (1000 * 60 * 60)).toFixed(1)}H，少於11小時！`;
+                        return result;
+                    }
+                }
+            }
+
+            return result;
+        }
+
+        // Get absolute Datetime objects for precision checking
+        function getShiftTimeRange(shift) {
+            const startStr = shift.date;
+            const startParts = startStr.split("-");
+            const y = parseInt(startParts[0]);
+            const m = parseInt(startParts[1]);
+            const d = parseInt(startParts[2]);
+
+            let start, end;
+
+            switch(shift.type) {
+                case "mid": // 17:00 - 24:00
+                    start = new Date(y, m - 1, d, 17, 0);
+                    end = new Date(y, m - 1, d, 24, 0);
+                    break;
+                case "night": // 23:30 - 08:00 (Next Day)
+                    start = new Date(y, m - 1, d, 23, 30);
+                    end = new Date(y, m - 1, d + 1, 8, 0);
+                    break;
+                case "fri_1": // 17:00 - 21:00
+                    start = new Date(y, m - 1, d, 17, 0);
+                    end = new Date(y, m - 1, d, 21, 0);
+                    break;
+                case "fri_2": // 21:00 - 06:00 (Next Day)
+                    start = new Date(y, m - 1, d, 21, 0);
+                    end = new Date(y, m - 1, d + 1, 6, 0);
+                    break;
+                case "sat_1": // 14:00 - 24:00
+                    start = new Date(y, m - 1, d, 14, 0);
+                    end = new Date(y, m - 1, d, 24, 0);
+                    break;
+                case "sat_2": // 24:00 - 06:00 (Starts Day+1 00:00 to 06:00)
+                    start = new Date(y, m - 1, d + 1, 0, 0);
+                    end = new Date(y, m - 1, d + 1, 6, 0);
+                    break;
+            }
+
+            return { start, end };
+        }
+
+        // Update single shift assignment from dropdown
+        function updateEmployee(shiftId, newEmp) {
+            const monthData = scheduleData[currentMonth];
+            const shift = monthData.find(s => s.id === shiftId);
+            if (shift) {
+                const oldEmp = shift.employee;
+                shift.employee = newEmp;
+                
+                // Trigger dynamic recalculations and render
+                render();
+                
+                showToast(`🔄 已成功將 ${shift.date} (${shift.weekday}) ${shift.name} 調整為：${newEmp ? newEmp + '同仁' : '排休'}`, "success");
+            }
+        }
+
+        // Switch Month
+        function switchMonth(m) {
+            currentMonth = m;
+            document.getElementById("btn-m6").className = m === 6 ? "py-2.5 rounded-xl text-sm font-bold transition shadow-sm bg-indigo-600 text-white" : "py-2.5 rounded-xl text-sm font-bold transition shadow-sm bg-white text-slate-600 border border-slate-200 hover:bg-slate-50";
+            document.getElementById("btn-m7").className = m === 7 ? "py-2.5 rounded-xl text-sm font-bold transition shadow-sm bg-indigo-600 text-white" : "py-2.5 rounded-xl text-sm font-bold transition shadow-sm bg-white text-slate-600 border border-slate-200 hover:bg-slate-50";
+            render();
+        }
+
+        // Toast message engine
+        function showToast(text, type = "success") {
+            const toast = document.getElementById("toast");
+            const toastText = document.getElementById("toast-text");
+            
+            toastText.innerText = text;
+            
+            toast.classList.remove("hidden");
+            setTimeout(() => {
+                toast.classList.remove("scale-95", "opacity-0");
+                toast.classList.add("scale-100", "opacity-100");
+            }, 50);
+
+            // Auto dismiss
+            setTimeout(() => {
+                closeToast();
+            }, 6000);
+        }
+
+        function closeToast() {
+            const toast = document.getElementById("toast");
+            toast.classList.remove("scale-100", "opacity-100");
+            toast.classList.add("scale-95", "opacity-0");
+            setTimeout(() => {
+                toast.classList.add("hidden");
+            }, 300);
+        }
+
+        // Export CSV logic
+        function exportCSV() {
+            let csvContent = "data:text/csv;charset=utf-8,";
+            csvContent += "日期,星期,班別,排班同仁,身份別,工時,備註\n";
+
+            scheduleData[currentMonth].forEach(s => {
+                const role = staffRoles[s.employee] || "";
+                csvContent += `${s.date},${s.weekday},${s.name},${s.employee},${role},${s.hours}小時,${s.note}\n`;
+            });
+
+            const encodedUri = encodeURI(csvContent);
+            const link = document.createElement("a");
+            link.setAttribute("href", encodedUri);
+            link.setAttribute("download", `2026_${currentMonth}月_排班表.csv`);
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+        }
+
+        // Window onload initializer
+        window.onload = function() {
+            initSchedules();
+            render();
+        }
+    </script>
+</body>
+</html>

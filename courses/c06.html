@@ -1,0 +1,507 @@
+<!doctype html>
+<html lang="zh-Hant">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>C06 第六堂課 | AI 入門應用班成果展</title>
+    <meta
+      name="description"
+      content="第六堂課實際內容：期中需求盤點、個人 AI 專案啟動、長對話分支與 Token 管理、Word/Excel 流程優化與 Codex 權限安全預告。"
+    >
+    <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="../assets/styles.css">
+  </head>
+  <body class="lesson-page">
+    <svg aria-hidden="true" class="icon-sprite">
+      <symbol id="icon-home" viewBox="0 0 24 24">
+        <path d="M3 10.8 12 3l9 7.8v9.2a1 1 0 0 1-1 1h-5.2v-6.2H9.2V21H4a1 1 0 0 1-1-1z"/>
+      </symbol>
+      <symbol id="icon-course" viewBox="0 0 24 24">
+        <path d="M5 4.8h10.5a3.5 3.5 0 0 1 3.5 3.5V20H8.5A3.5 3.5 0 0 1 5 16.5z"/>
+        <path d="M8.5 4.8A3.5 3.5 0 0 0 5 8.3v8.2A3.5 3.5 0 0 1 8.5 13H19"/>
+      </symbol>
+      <symbol id="icon-gallery" viewBox="0 0 24 24">
+        <rect x="4" y="5" width="16" height="14" rx="1"/>
+        <path d="m7 16 3.2-3.4 2.4 2.3 2.8-3.8L19 16"/>
+        <circle cx="9" cy="9" r="1.2"/>
+      </symbol>
+      <symbol id="icon-message" viewBox="0 0 24 24">
+        <path d="M5 5h14v10H9l-4 4z"/>
+        <path d="M8 9h8M8 12h5"/>
+      </symbol>
+      <symbol id="icon-info" viewBox="0 0 24 24">
+        <circle cx="12" cy="12" r="8"/>
+        <path d="M12 10v6M12 7.5h.01"/>
+      </symbol>
+      <symbol id="icon-arrow" viewBox="0 0 24 24">
+        <path d="M19 12H5M11 6l-6 6 6 6"/>
+      </symbol>
+    </svg>
+
+    <header class="site-header">
+      <a class="brand" href="../index.html" aria-label="回到成果展首頁">
+        <span class="brand-mark">AI</span>
+        <span>
+          <strong>婦女學苑 AI 成果展</strong>
+          <small>C06 第六堂課</small>
+        </span>
+      </a>
+      <nav class="desktop-nav" aria-label="主要導覽">
+        <a href="../index.html#journey">十堂課</a>
+        <a href="../index.html#outcomes">成果</a>
+        <a href="../index.html#map">學習地圖</a>
+        <a href="../index.html#message-wall">留言</a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="lesson-hero c06-hero">
+        <div class="lesson-hero-copy reveal">
+          <a class="back-link" href="../index.html#journey">
+            <svg><use href="#icon-arrow"></use></svg>
+            回到十堂課旅程
+          </a>
+          <p class="eyebrow">C06 | 2026.06.09</p>
+          <h1>期中專案啟動室：把模糊需求變成自己的 AI 專案</h1>
+          <p>
+            第六堂原本有翻譯練習素材，但實際課堂轉成期中盤點與專案啟動：回顧前五堂，讓學員把自己的工作、生活困擾和 AI 對話結合起來，並示範分支、Token、文書自動化與 Codex 代理的安全觀念。
+          </p>
+        </div>
+        <figure class="c06-hero-console reveal" aria-label="第六堂課堂操作儀表板">
+          <svg viewBox="0 0 680 470" role="img" aria-labelledby="c06-console-title c06-console-desc">
+            <title id="c06-console-title">期中專案啟動儀表板</title>
+            <desc id="c06-console-desc">示意第六堂從前五堂摘要、個人提示詞、長對話控制到權限安全的課堂流程。</desc>
+            <rect class="console-shell" x="24" y="26" width="632" height="410" rx="22"></rect>
+            <rect class="console-top" x="24" y="26" width="632" height="60" rx="22"></rect>
+            <circle class="console-dot red" cx="58" cy="56" r="8"></circle>
+            <circle class="console-dot yellow" cx="84" cy="56" r="8"></circle>
+            <circle class="console-dot green" cx="110" cy="56" r="8"></circle>
+            <text class="console-title" x="140" y="62">Midterm Project Control</text>
+            <g class="console-file file-a">
+              <rect x="70" y="128" width="150" height="96" rx="12"></rect>
+              <text x="92" y="164">前五堂摘要</text>
+              <text x="92" y="194">course.md</text>
+            </g>
+            <g class="console-file file-b">
+              <rect x="70" y="262" width="150" height="96" rx="12"></rect>
+              <text x="92" y="298">個人專案</text>
+              <text x="92" y="328">prompt.md</text>
+            </g>
+            <path class="console-wire" d="M220 176 C294 176 290 150 360 150"></path>
+            <path class="console-wire" d="M220 310 C294 310 290 292 360 292"></path>
+            <rect class="console-ai" x="360" y="116" width="220" height="224" rx="18"></rect>
+            <text class="console-ai-title" x="396" y="158">AI 追問中</text>
+            <rect class="console-chat c1" x="398" y="186" width="130" height="28" rx="8"></rect>
+            <rect class="console-chat c2" x="398" y="226" width="156" height="28" rx="8"></rect>
+            <rect class="console-chat c3" x="398" y="266" width="114" height="28" rx="8"></rect>
+            <g class="console-badge badge-branch">
+              <rect x="300" y="364" width="94" height="42" rx="10"></rect>
+              <text x="318" y="391">分支</text>
+            </g>
+            <g class="console-badge badge-token">
+              <rect x="416" y="364" width="94" height="42" rx="10"></rect>
+              <text x="434" y="391">摘要</text>
+            </g>
+            <g class="console-badge badge-safe">
+              <rect x="532" y="364" width="94" height="42" rx="10"></rect>
+              <text x="550" y="391">權限</text>
+            </g>
+          </svg>
+        </figure>
+      </section>
+
+      <section class="content-section lesson-content">
+        <div class="lesson-takeaway reveal">
+          <span class="lesson-number">帶走一句話</span>
+          <h2>學 AI 不是記住每個工具，而是遇到問題時，知道怎麼請 AI 幫你拆流程、找方法、做第一步。</h2>
+        </div>
+
+        <div class="c06-scan-grid reveal">
+          <article class="scan-card">
+            <span>01</span>
+            <h2>先餵背景</h2>
+            <p>把前五堂摘要當作 AI 的共同記憶，讓它知道學員已經學過提示詞、比較、NotebookLM、排班與音樂流程。</p>
+            <div class="scan-meter"><i style="width: 72%"></i></div>
+          </article>
+          <article class="scan-card">
+            <span>02</span>
+            <h2>再追需求</h2>
+            <p>不是請 AI 直接列一堆建議，而是要求它一題一題追問，把模糊困擾整理成可做的小專案。</p>
+            <div class="scan-meter"><i style="width: 88%"></i></div>
+          </article>
+          <article class="scan-card">
+            <span>03</span>
+            <h2>最後守界線</h2>
+            <p>Word/Excel、音樂授權、修圖與 Codex 都回到同一件事：資料能不能給？工具該怎麼限制？</p>
+            <div class="scan-meter"><i style="width: 64%"></i></div>
+          </article>
+        </div>
+        <div class="c06-reality-note reveal">
+          <strong>和原教案的差異</strong>
+          <p>翻譯實戰沒有正式進行；實際課堂更像一次「期中轉向會議」，把前半段能力收斂成個人專案、工作流程與安全判斷。</p>
+        </div>
+      </section>
+
+      <section class="content-section surface">
+        <div class="section-heading reveal">
+          <p class="eyebrow">Data Machine</p>
+          <h2>同一份課程摘要，推進成個人專案</h2>
+          <p>第六堂不是再學一個新工具，而是把前五堂變成 AI 對話的背景資料，再用專案提示詞逼 AI 追問、整理、產出下一步。</p>
+        </div>
+
+        <figure class="c06-machine reveal" aria-label="課程摘要轉成個人專案的動畫機台">
+          <svg viewBox="0 0 1040 430" role="img" aria-labelledby="machine-title machine-desc">
+            <title id="machine-title">課程摘要資料機台</title>
+            <desc id="machine-desc">前五堂摘要和個人提示詞進入 AI 引導機，產出問題、專案方向與第一步行動。</desc>
+            <rect class="machine-bg" x="20" y="24" width="1000" height="382" rx="22"></rect>
+            <path class="machine-track" d="M96 320 H918"></path>
+            <g class="machine-doc doc-course">
+              <rect x="86" y="96" width="156" height="210" rx="12"></rect>
+              <text x="118" y="144">前五堂</text>
+              <text x="118" y="174">摘要.md</text>
+              <line x1="116" y1="214" x2="210" y2="214"></line>
+              <line x1="116" y1="244" x2="194" y2="244"></line>
+            </g>
+            <g class="machine-doc doc-prompt">
+              <rect x="272" y="96" width="156" height="210" rx="12"></rect>
+              <text x="304" y="144">專案</text>
+              <text x="304" y="174">提示詞.md</text>
+              <line x1="302" y1="214" x2="396" y2="214"></line>
+              <line x1="302" y1="244" x2="380" y2="244"></line>
+            </g>
+            <g class="machine-core">
+              <rect x="470" y="78" width="220" height="250" rx="22"></rect>
+              <circle cx="580" cy="174" r="54"></circle>
+              <text x="540" y="168">AI</text>
+              <text x="524" y="202">追問器</text>
+              <path class="gear-ring" d="M580 112 A62 62 0 1 1 579 112"></path>
+            </g>
+            <g class="machine-output out-question">
+              <rect x="742" y="76" width="190" height="68" rx="12"></rect>
+              <text x="776" y="118">先問一題</text>
+            </g>
+            <g class="machine-output out-project">
+              <rect x="742" y="178" width="190" height="68" rx="12"></rect>
+              <text x="770" y="220">專案方向</text>
+            </g>
+            <g class="machine-output out-next">
+              <rect x="742" y="280" width="190" height="68" rx="12"></rect>
+              <text x="770" y="322">第一步行動</text>
+            </g>
+            <path class="machine-signal s1" d="M242 176 C300 176 338 176 470 176"></path>
+            <path class="machine-signal s2" d="M428 220 C452 220 452 220 470 220"></path>
+            <path class="machine-signal s3" d="M690 176 C716 130 718 110 742 110"></path>
+            <path class="machine-signal s4" d="M690 206 C716 206 718 212 742 212"></path>
+            <path class="machine-signal s5" d="M690 236 C716 282 718 314 742 314"></path>
+          </svg>
+        </figure>
+      </section>
+
+      <section class="content-section">
+        <div class="section-heading reveal">
+          <p class="eyebrow">Need Clinic</p>
+          <h2>需求診間小遊戲：把一句抱怨轉成 AI 專案</h2>
+          <p>第六堂最像「幫自己的需求看診」。點一個困擾，再選要補給 AI 的資訊，系統會判斷這個專案是不是已經可以開始。</p>
+        </div>
+
+        <div class="need-game reveal" data-need-game>
+          <div class="need-case-list" aria-label="選擇需求案例">
+            <button type="button" class="is-selected" data-need-case="schedule">每月排班一直重排</button>
+            <button type="button" data-need-case="document">Excel 資料要填進 Word</button>
+            <button type="button" data-need-case="community">活動通知反覆重寫</button>
+            <button type="button" data-need-case="travel">旅遊資料太分散</button>
+          </div>
+          <article class="need-clinic" aria-live="polite">
+            <div class="clinic-screen">
+              <div class="clinic-header">
+                <span data-need-tag>工作流程</span>
+                <strong data-need-score>專案成熟度 40%</strong>
+              </div>
+              <div class="clinic-progress" aria-hidden="true"><i data-need-meter style="width: 40%"></i></div>
+              <div class="clinic-dialog">
+                <p class="user-bubble" data-need-pain>每月要排很多人的班，規則複雜，臨時請假時還要重新檢查。</p>
+                <p class="ai-bubble" data-need-question>AI 會先問：你最怕出錯的是人力不足、休假衝突，還是班距限制？</p>
+              </div>
+            </div>
+            <div class="need-chips" aria-label="選擇要補充給 AI 的資訊">
+              <button type="button" data-need-chip="role">我的角色</button>
+              <button type="button" data-need-chip="rules">限制規則</button>
+              <button type="button" data-need-chip="sample">範例資料</button>
+              <button type="button" data-need-chip="privacy">隱私界線</button>
+            </div>
+            <div class="clinic-result">
+              <div>
+                <strong>目前 AI 能做</strong>
+                <p data-need-can>先把排班規則拆成檢查清單，列出它還缺哪些條件。</p>
+              </div>
+              <div>
+                <strong>下一步產出</strong>
+                <p data-need-output>排班規則檢查表、請假情境判斷流程、可重複使用的排班小助手。</p>
+              </div>
+              <div>
+                <strong>課堂結論</strong>
+                <p data-need-lesson>需求越具體，AI 越能追問；資料越敏感，越要先去識別化。</p>
+              </div>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section class="content-section surface">
+        <div class="section-heading reveal">
+          <p class="eyebrow">Branch Console</p>
+          <h2>長對話控制台：別讓好答案被蓋掉</h2>
+          <p>課堂中有學員問：如果改了問題，原本好答案被蓋掉怎麼辦？這裡把「分支、摘要、拉回目標」做成一個會變化的對話儀表板。</p>
+        </div>
+
+        <div class="branch-game reveal" data-branch-game>
+          <div class="branch-controls" aria-label="選擇長對話操作">
+            <button type="button" class="is-selected" data-branch-action="branch">建立分支</button>
+            <button type="button" data-branch-action="summary">壓縮成摘要</button>
+            <button type="button" data-branch-action="goal">貼回最終目標</button>
+            <button type="button" data-branch-action="drift">繼續亂問看看</button>
+          </div>
+          <article class="branch-console" aria-live="polite">
+            <div class="branch-screen" data-branch-screen data-mode="branch">
+              <svg viewBox="0 0 760 430" role="img" aria-labelledby="branch-title branch-desc">
+                <title id="branch-title">長對話分支控制台</title>
+                <desc id="branch-desc">模擬分支、摘要與目標提醒對長對話的影響。</desc>
+                <rect class="branch-bg" x="20" y="20" width="720" height="390" rx="20"></rect>
+                <rect class="branch-thread root-thread" x="70" y="72" width="218" height="74" rx="12"></rect>
+                <text class="branch-svg-text" x="96" y="116">原本的好答案</text>
+                <path class="branch-svg-line line-a" d="M288 110 C360 70 410 74 480 82"></path>
+                <path class="branch-svg-line line-b" d="M288 110 C360 138 410 164 480 170"></path>
+                <path class="branch-svg-line line-c" d="M288 110 C360 224 410 270 480 288"></path>
+                <rect class="branch-thread branch-a" x="480" y="52" width="180" height="58" rx="10"></rect>
+                <rect class="branch-thread branch-b" x="480" y="142" width="180" height="58" rx="10"></rect>
+                <rect class="branch-thread branch-c" x="480" y="262" width="180" height="58" rx="10"></rect>
+                <text class="branch-svg-text" x="510" y="88">A 正式版</text>
+                <text class="branch-svg-text" x="510" y="178">B 創意版</text>
+                <text class="branch-svg-text" x="510" y="298">C 簡短版</text>
+                <rect class="branch-summary" x="78" y="250" width="240" height="82" rx="12"></rect>
+                <text class="branch-svg-text summary-text" x="106" y="286">摘要：目標 / 已決定 / 未解</text>
+                <rect class="branch-goal" x="354" y="338" width="292" height="42" rx="10"></rect>
+                <text class="branch-svg-text goal-text" x="382" y="366">最終目標：做出可執行專案</text>
+              </svg>
+            </div>
+            <div class="branch-status">
+              <div><span>分支數</span><strong data-branch-count>3 條</strong></div>
+              <div><span>Token 壓力</span><strong data-branch-token>中</strong></div>
+              <div><span>主線清楚度</span><strong data-branch-clarity>高</strong></div>
+            </div>
+            <div class="branch-copy">
+              <span data-branch-tag>課堂示範</span>
+              <h3 data-branch-title>建立分支，保留原本好答案</h3>
+              <p data-branch-desc>同一段對話可以分成 A、B、C 方向，讓你比較不同寫法或方案，不用把前面覺得好的內容蓋掉。</p>
+              <strong data-branch-lesson>課堂結論：分支不是為了炫功能，而是讓思考路線不互相污染。</strong>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section class="content-section">
+        <div class="section-heading reveal">
+          <p class="eyebrow">Workflow Puzzle</p>
+          <h2>流程解謎：哪一步才該交給 AI？</h2>
+          <p>第六堂用 Word/Excel、表單、配樂授權、修圖隱私等例子說明：AI 可以幫忙找方法，但不一定要直接拿到所有真實資料。</p>
+        </div>
+
+        <div class="flow-game reveal" data-flow-game>
+          <div class="flow-case-strip" aria-label="選擇流程案例">
+            <button type="button" class="is-selected" data-flow-case="docx">Word 固定格式</button>
+            <button type="button" data-flow-case="form">回收資料格式亂</button>
+            <button type="button" data-flow-case="music">配樂授權判斷</button>
+            <button type="button" data-flow-case="photo">照片修圖隱私</button>
+          </div>
+          <article class="flow-board" aria-live="polite">
+            <div class="flow-problem">
+              <span data-flow-tag>文書自動化</span>
+              <h3 data-flow-title>保留 Word 版型，把 Excel 欄位自動填進去</h3>
+              <p data-flow-problem>如果直接叫 AI 重做整份 Word，很可能跑版，也不一定適合上傳真實名單。</p>
+            </div>
+            <div class="flow-options" aria-label="選擇解法">
+              <button type="button" data-flow-choice="upload">全部上傳給 AI</button>
+              <button type="button" class="is-selected" data-flow-choice="local">請 AI 找本機功能</button>
+              <button type="button" data-flow-choice="input">先改資料入口</button>
+            </div>
+            <div class="flow-visual" data-flow-visual data-choice="local">
+              <svg viewBox="0 0 760 280" role="img" aria-labelledby="flow-title flow-desc">
+                <title id="flow-title">流程解謎動畫</title>
+                <desc id="flow-desc">示意原始需求、AI 拆解和較安全的本機流程。</desc>
+                <rect class="flow-node raw" x="54" y="80" width="160" height="92" rx="14"></rect>
+                <text x="92" y="134">原始需求</text>
+                <rect class="flow-node ai" x="300" y="70" width="160" height="112" rx="14"></rect>
+                <text x="348" y="122">AI 拆解</text>
+                <text x="336" y="150">找流程</text>
+                <rect class="flow-node answer" x="546" y="80" width="160" height="92" rx="14"></rect>
+                <text x="584" y="134" data-flow-svg-label>合併列印</text>
+                <path class="flow-path" d="M214 126 H300"></path>
+                <path class="flow-path" d="M460 126 H546"></path>
+                <circle class="flow-pulse p1" cx="214" cy="126" r="8"></circle>
+                <circle class="flow-pulse p2" cx="460" cy="126" r="8"></circle>
+              </svg>
+            </div>
+            <div class="flow-result">
+              <div>
+                <strong>判斷結果</strong>
+                <p data-flow-result>這題適合讓 AI 幫你找到 Word/Excel 既有功能，例如合併列印、內容控制項或 VBA。</p>
+              </div>
+              <div>
+                <strong>安全程度</strong>
+                <p data-flow-safe>較安全：AI 可看欄位名稱和需求，不一定要看真實個資。</p>
+              </div>
+              <div>
+                <strong>課堂結論</strong>
+                <p data-flow-lesson>不要只問「AI 能不能幫我做」，要問「哪一段流程最值得讓 AI 協助」。</p>
+              </div>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section class="content-section surface">
+        <div class="section-heading reveal">
+          <p class="eyebrow">Permission Game</p>
+          <h2>Codex 權限警戒室：任務越強，界線越要清楚</h2>
+          <p>第六堂最後示範 Codex 可以在指定資料夾中建立日本旅遊專案。這裡把權限設定做成安全判斷遊戲，讓學員看出「能做事」和「能亂碰」只差一步。</p>
+        </div>
+
+        <div class="agent-game reveal" data-agent-game>
+          <div class="agent-missions" aria-label="選擇 Codex 任務">
+            <button type="button" class="is-selected" data-agent-mission="travel">建立日本旅遊專案資料夾</button>
+            <button type="button" data-agent-mission="rename">整理課堂檔案名稱</button>
+            <button type="button" data-agent-mission="web">查詢旅遊資料並做清單</button>
+          </div>
+          <article class="agent-arena" aria-live="polite">
+            <div class="agent-permissions" aria-label="選擇權限設定">
+              <button type="button" class="is-selected" data-agent-permission="ask">一律詢問我</button>
+              <button type="button" data-agent-permission="auto">代我核准</button>
+              <button type="button" data-agent-permission="full">完整存取權</button>
+            </div>
+            <div class="agent-visual" data-agent-visual data-risk="safe">
+              <svg viewBox="0 0 760 360" role="img" aria-labelledby="agent-title-svg agent-desc-svg">
+                <title id="agent-title-svg">Codex 權限警戒室</title>
+                <desc id="agent-desc-svg">示意 Codex 在指定資料夾、網路與整台電腦之間的權限界線。</desc>
+                <rect class="agent-room" x="24" y="24" width="712" height="312" rx="20"></rect>
+                <rect class="agent-zone folder-zone" x="70" y="78" width="190" height="198" rx="18"></rect>
+                <text class="agent-svg-text" x="104" y="122">指定資料夾</text>
+                <rect class="agent-file" x="110" y="152" width="96" height="28" rx="7"></rect>
+                <rect class="agent-file" x="110" y="194" width="122" height="28" rx="7"></rect>
+                <rect class="agent-zone web-zone" x="300" y="78" width="160" height="198" rx="18"></rect>
+                <text class="agent-svg-text" x="350" y="122">網路</text>
+                <circle class="agent-web" cx="380" cy="194" r="42"></circle>
+                <rect class="agent-zone mac-zone" x="500" y="78" width="190" height="198" rx="18"></rect>
+                <text class="agent-svg-text" x="538" y="122">整台電腦</text>
+                <path class="agent-shield" d="M595 156 640 172v38c0 34-18 56-45 72-27-16-45-38-45-72v-38z"></path>
+                <path class="agent-route" d="M260 178 C306 178 320 178 300 178"></path>
+                <path class="agent-route risky-route" d="M460 178 C498 178 500 178 500 178"></path>
+                <circle class="agent-bot" cx="260" cy="178" r="18"></circle>
+              </svg>
+            </div>
+            <div class="agent-report">
+              <span data-agent-tag>建議設定</span>
+              <h3 data-agent-title>一律詢問我</h3>
+              <p data-agent-desc>適合初學者：建立資料夾與檔案前都先確認，雖然慢一點，但不容易碰到課程外資料。</p>
+              <div class="agent-risk-meter"><i data-agent-meter style="width: 84%"></i></div>
+              <strong data-agent-lesson>課堂提醒：先把任務限制在指定資料夾，等熟悉後再提高自動化程度。</strong>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section class="content-section">
+        <div class="section-heading reveal">
+          <p class="eyebrow">Quick Check</p>
+          <h2>課後 1 分鐘小檢查</h2>
+          <p>確認第六堂最重要的觀念：個人專案、背景資料、分支、流程優化與權限安全。</p>
+        </div>
+        <div class="quiz-panel reveal" data-quiz data-quiz-name="C06">
+          <article class="quiz-card" data-quiz-question>
+            <span>01</span>
+            <h3>第六堂實際最核心的主軸是什麼？</h3>
+            <button type="button" data-correct="false">完整練習藥袋與購物頁翻譯</button>
+            <button type="button" data-correct="true">期中盤點與個人 AI 專案啟動</button>
+            <button type="button" data-correct="false">只學 Suno 進階編曲</button>
+            <p class="quiz-feedback"></p>
+          </article>
+          <article class="quiz-card" data-quiz-question>
+            <span>02</span>
+            <h3>為什麼要把前五堂摘要給 AI？</h3>
+            <button type="button" data-correct="true">讓 AI 知道課程背景與學員目前學過什麼</button>
+            <button type="button" data-correct="false">讓 AI 自動知道所有個人隱私</button>
+            <button type="button" data-correct="false">因為沒有附件就不能聊天</button>
+            <p class="quiz-feedback"></p>
+          </article>
+          <article class="quiz-card" data-quiz-question>
+            <span>03</span>
+            <h3>ChatGPT 分支功能適合用在什麼情況？</h3>
+            <button type="button" data-correct="true">同一段對話想往不同方向測試，避免覆蓋原本答案</button>
+            <button type="button" data-correct="false">用來刪掉所有前面聊天紀錄</button>
+            <button type="button" data-correct="false">用來保證 AI 永遠不會錯</button>
+            <p class="quiz-feedback"></p>
+          </article>
+          <article class="quiz-card" data-quiz-question>
+            <span>04</span>
+            <h3>Excel 資料填 Word 的案例，課堂最後強調什麼？</h3>
+            <button type="button" data-correct="false">一定要把公司資料全部上傳給 AI</button>
+            <button type="button" data-correct="true">AI 可協助找出合併列印、內容控制項或巨集等流程解法</button>
+            <button type="button" data-correct="false">Word 和 Excel 完全不能自動化</button>
+            <p class="quiz-feedback"></p>
+          </article>
+          <article class="quiz-card" data-quiz-question>
+            <span>05</span>
+            <h3>關於 Codex / AI 代理權限，哪個觀念最安全？</h3>
+            <button type="button" data-correct="true">初學階段避免完整存取權，先限制在指定資料夾與核准機制</button>
+            <button type="button" data-correct="false">一開始就給完整存取權最方便</button>
+            <button type="button" data-correct="false">只要是 AI，就不可能刪錯檔案</button>
+            <p class="quiz-feedback"></p>
+          </article>
+          <div class="quiz-result" aria-live="polite">
+            <strong>完成 0 / 5 題</strong>
+            <small>答完五題後，這裡會顯示你的 C06 小檢查結果。</small>
+          </div>
+        </div>
+      </section>
+
+      <section class="content-section split next-lesson">
+        <div class="section-heading reveal">
+          <p class="eyebrow">Next</p>
+          <h2>與第七堂的銜接</h2>
+          <p>
+            第六堂先讓大家想清楚自己的需求；第七堂實際延續這條路，從學員提問出發，把 Excel、影片生成、Markdown 與 Codex 接進真實工作流程。
+          </p>
+        </div>
+        <a class="next-card reveal" href="c07.html">
+          <span>C07</span>
+          <strong>AI 工作流實驗場</strong>
+          <p>用增益集、影片生成、字幕流程和 Codex 小工具，練習把 AI 放進實際工作。</p>
+        </a>
+      </section>
+    </main>
+
+    <nav class="mobile-bottom-nav" aria-label="手機導覽">
+      <a href="../index.html" aria-label="首頁">
+        <svg><use href="#icon-home"></use></svg>
+        <span>首頁</span>
+      </a>
+      <a href="../index.html#journey" aria-label="課程">
+        <svg><use href="#icon-course"></use></svg>
+        <span>課程</span>
+      </a>
+      <a href="../index.html#outcomes" aria-label="成果">
+        <svg><use href="#icon-gallery"></use></svg>
+        <span>成果</span>
+      </a>
+      <a href="../index.html#message-wall" aria-label="留言">
+        <svg><use href="#icon-message"></use></svg>
+        <span>留言</span>
+      </a>
+      <a href="../index.html#about" aria-label="關於">
+        <svg><use href="#icon-info"></use></svg>
+        <span>關於</span>
+      </a>
+    </nav>
+
+    <script src="../assets/app.js"></script>
+  </body>
+</html>
